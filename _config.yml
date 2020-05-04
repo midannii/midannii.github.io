@@ -14,7 +14,7 @@ author:  # change following line to your infomation.
   name: midannii  # Be used at blog posts' author.
   first_name: midan  # Be used at index page about me section.
   last_name: s  # Be used at index page about me section.
-  avatar: /static/assets/img/landing/2020_04.jpg  # upload your avatar at directory and edit it.
+  avatar: /static/assets/img/landing/2020_04.JPG  # upload your avatar at directory and edit it.
   github_username: midannii  # Leave blank if you don't have now
   linkedin_id:  # Leave blank if you don't have now
   facebook_username:   # Leave blank if you don't have now
