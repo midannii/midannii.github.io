@@ -2658,7 +2658,13 @@ body {
     background-repeat: no-repeat;
     margin-top: 60px;
   }
-  section {
+  .testimonials {
+    padding-top: 80px;
+    padding-bottom: 90px;
+    background-color: #3385FF;
+    background-image: url(../assets/img/landing/header_two.jpg);
+  }
+  .section {
     &.timeline {
       padding-bottom: 30px;
     }
