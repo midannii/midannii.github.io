@@ -4,7 +4,7 @@
     detail: KHU sysbioinfo lab
     i18n: company_a
   desc:
-    detail: I worked at Company A ...
+    detail: I worked at "https://www.sysbioinfo.com/"
     i18n: company_a_desc
   date:
     detail: Jan. 2020
