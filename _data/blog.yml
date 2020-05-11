@@ -6,22 +6,25 @@
 - name: Python
   href: /python/
 
-
 - name: C++
   href: /cpp/
 
-- name: Linux
-  href: /linux/
-
-- name: HTML
-  href: /html/
+- name: Deep Learning
+  href: /DL/
 
 - name: Database
   href: /database/
 
-- name: Mac
-  href: /mac/
+- name: Research
+  href: /research/
+# - name: Linux
+#  href: /linux/
 
+# - name: HTML
+#  href: /html/
+
+# - name: Mac
+#  href: /mac/
 
 # Don't display donation page: change donation to off at file '_config.yml'
 - name: Donate
