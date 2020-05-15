@@ -124,7 +124,7 @@ for i in range(len(records)):
 df = pd.DataFrame(data = {'ids': ids, 'full_id': full_ids, 'name':name})
 ```
 
-[df](/static/assets/img/blog/python/df.png)
+![df](/static/assets/img/blog/python/df.png){: width="200" height="300"}
 
 
 
@@ -168,7 +168,7 @@ for i in range(len(data)):
 ```
 
 
-[df](/static/assets/img/blog/python/df2.png)
+![df](/static/assets/img/blog/python/df2.png){: width="200" height="300"}
 
 
 <br>
@@ -251,7 +251,7 @@ stdout, stderr = muscle_cline(stdin=data)
 ```
 
 
-[muscle](/static/assets/img/blog/python/muscle.png)
+![muscle](/static/assets/img/blog/python/muscle.png){: width="400" height="300"}
 
 
 
@@ -343,7 +343,7 @@ hla_a = pd.DataFrame(data = {'alleles':list(hla_a['alleles']), 'align': new_alig
 hla_a.to_csv('/home/data/HLA_A_prot.txt', index=False, header=None, sep='\t')
 ```
 
-[df](/static/assets/img/blog/python/df3.png)
+![df](/static/assets/img/blog/python/df3.png){: width="400" height="300"}
 
 
 
