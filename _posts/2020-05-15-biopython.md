@@ -124,7 +124,7 @@ for i in range(len(records)):
 df = pd.DataFrame(data = {'ids': ids, 'full_id': full_ids, 'name':name})
 ```
 
-![df](/static/assets/img/blog/python/df.png){: width="200" height="300"}
+![df](/static/assets/img/blog/python/df.png){: width="400" height="300"}
 
 
 
@@ -168,7 +168,7 @@ for i in range(len(data)):
 ```
 
 
-![df](/static/assets/img/blog/python/df2.png){: width="200" height="300"}
+![df](/static/assets/img/blog/python/df2.png){: width="400" height="300"}
 
 
 <br>
