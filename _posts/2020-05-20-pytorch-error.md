@@ -18,6 +18,9 @@ icon: icon-html
 
 이 모델은 pytorch 기반이고, 이후 nngraph와 luautf8의 load 가 필요했다.
 
+
+<br>
+
 현재 `Google colab notebook` 을 이용하고 있기에, pytorch는 내장되어 있었지만
 
 ```
