@@ -28,7 +28,7 @@ $ git clone https://github.com/ANHIG/IMGTHLA.git
 이 파일의 내부 정보는 [README.md](https://github.com/ANHIG/IMGTHLA)에 담겨있는데, 일부를 가져오면
 
 
-```
+```python
 FASTA folder
 All files in this folder are provided in the FASTA sequence format. Please note the FASTA format contains no alignment information.
 
@@ -49,7 +49,7 @@ Files designated “X_gen.fasta”, where X is a locus or gene, contain genomic 
 
 ## step 2) Biopython library load & data load
 
-```
+```python
 import Bio
 
 import os
@@ -57,7 +57,7 @@ os.chdir('path/IMGTHLA/fasta')
 
 ```
 
-```
+```python
 # for HLA-A
 from Bio import SeqIO, Seq
 input_file = 'A_prot.fasta'
@@ -81,7 +81,7 @@ assert all(len(record.seq) == maxlen for record in records)
 
 우선 description을 모아 저장해두자.
 
-```
+```python
 des = []
 for record in records:
     des.append(record.description)
@@ -101,7 +101,7 @@ for record in records:
 중복되는 id들을 제거하기 위해서 맨 처음으로 나오는 full_id를 채택한다.
 
 
-```
+```python
 ids = []
 full_ids = []
 delete = []
@@ -120,7 +120,7 @@ for i in range(len(records)):
 
 또한 dataframe으로 만들었으며, 아래와 같다.
 
-```
+```python
 df = pd.DataFrame(data = {'ids': ids, 'full_id': full_ids, 'name':name})
 ```
 
@@ -131,7 +131,7 @@ df = pd.DataFrame(data = {'ids': ids, 'full_id': full_ids, 'name':name})
 이제 중복을 제거하여 dataframe으로 저장하자.
 
 
-```
+```python
 uniques = list(df['ids'].unique())
 
 overlap = [] # alleles of overlapped
@@ -156,7 +156,7 @@ only = sorted(list(set(only)))
 ```
 
 
-```
+```python
 # dataframe으로 저장
 data = np.asarray(df)[only]
 
@@ -176,7 +176,7 @@ for i in range(len(data)):
 ## step 4) fasta file download
 
 
-```
+```python
 from Bio import Align
 from Bio.Align import Applications
 from Bio.Align.Applications import MuscleCommandline
@@ -188,7 +188,7 @@ records = (r for r in SeqIO.parse('A_prot.fasta', 'fasta') if len(r)<900)
 
 
 
-```
+```python
 from io import StringIO
 handle = StringIO()
 SeqIO.write(records, handle, 'fasta')
@@ -208,7 +208,7 @@ handle을 이용함으로서 크기가 큰 파일을 용이하게 다룰 수 있
 이때 각 line의 구분은 따로 없으며, 내용 상의 구분은 **>** 으로 이루어져 있으니 아래와 같이 코딩한다.
 
 
-```
+```python
 lines = []
 ind1 = 0
 ind2 = 0
@@ -218,7 +218,7 @@ while ind2 != -1:
 
 ```
 
-```
+```python
 name = []
 ids = []
 full_id = []
@@ -244,7 +244,7 @@ df = pd.DataFrame(data = {'name': name, 'id': ids, 'full id': full_id, 'sequence
 ## step 5) alignment with muscle
 
 
-```
+```python
 muscle_exe = '/home/midan/_midanniiii/muscle3.8.31_i86linux64'
 muscle_cline = MuscleCommandline(muscle_exe)
 stdout, stderr = muscle_cline(stdin=data)
@@ -255,7 +255,7 @@ stdout, stderr = muscle_cline(stdin=data)
 
 
 
-```
+```python
 empty = []
 new = []
 for i in range(len(stdout)):
@@ -273,7 +273,7 @@ for i in range(len(new)):
 
 이제 alignment와 name을 모아 list로 정리하자.
 
-```
+```python
 new_align = []
 names = []
 for i in range(len(align)):
@@ -297,7 +297,7 @@ for i in range(len(new_align)):
 
 dataframe으로 저장하자.
 
-```
+```python
 df_a = pd.DataFrame(data = {'align' : new_align, 'name':names})
 a = pd.DataFrame(data = {'name': a_name, 'alleles': hla_a})
 hla_a = pd.merge(a,df_a)
@@ -308,7 +308,8 @@ hla_a = hla_a.drop(['name'], axis=1)
 또한 HLA-A-0101은 365bp이므로, 이를 기준으로 365개를 추리자.
 
 이를 위해서는 불필요한 **-** 를 잘라내야 한다.
-```
+
+```python
 aligns = list(hla_a['align'])
 align = aligns[0]
 indices = []
@@ -338,7 +339,7 @@ for i in range(len(aligns)):
 이제 만든 data를 dataframe으로 만들어서 저장하자.
 
 
-```
+```python
 hla_a = pd.DataFrame(data = {'alleles':list(hla_a['alleles']), 'align': new_align})
 hla_a.to_csv('/home/data/HLA_A_prot.txt', index=False, header=None, sep='\t')
 ```
