@@ -4,8 +4,8 @@ title:  "Google colab에서 luarocks 사용하기"
 date:   2020-05-20
 desc: "python pytorch"
 keywords: "python, pytorch, DBMS"
-categories: [Python]
-tags: [Python, pytorch, CNN, charCNN]
+categories: [Steps]
+tags: [Python, pytorch, CNN, charCNN, googling]
 icon: icon-html
 ---
 
