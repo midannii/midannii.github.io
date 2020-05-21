@@ -4,7 +4,7 @@ title:  "[Issue]Script Shell file with colab: th command not found"
 date:   2020-05-21
 desc: "Step by steps: issue and googling "
 keywords: "colab, sh ,scriptshell, terminal"
-categories: [Steps]
+categories: [Research]
 tags: [colab, sh, scriptshell]
 icon: icon-html
 ---
@@ -46,4 +46,4 @@ run_models.sh: 34: run_models.sh: -char_vec_size: not found
 
 <br>
 
-빠른 진행을 위해 구글링하여 이 issue를 해결해보도록 하쟈,,, 
+빠른 진행을 위해 구글링하여 이 issue를 해결해보도록 하쟈,,,

@@ -15,11 +15,10 @@
 - name: Database
   href: /database/
 
-- name: Steps
-  href: /steps/
 
 - name: Research
-  href: /research/
+  href: /Research/
+
 # - name: Linux
 #  href: /linux/
 
