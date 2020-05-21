@@ -15,6 +15,9 @@
 - name: Database
   href: /database/
 
+- name: Steps
+  href: /steps/
+
 - name: Research
   href: /research/
 # - name: Linux
