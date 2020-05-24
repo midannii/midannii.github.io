@@ -47,3 +47,26 @@ run_models.sh: 34: run_models.sh: -char_vec_size: not found
 <br>
 
 빠른 진행을 위해 구글링하여 이 issue를 해결해보도록 하쟈,,,
+
+
+
+<br>
+
+2020.05.24
+----------
+
+
+구글링 결과, sh는 torch 실행을 위한 명령어였다!
+
+그래서 torch를 깐다고 깔았는데, 알고보니까 python에서의 pytorch가 아니라
+
+lua에서의 torch 더라고 ㅎㅎ,,, 구글링을 더 해보고 설치도 해보고 뭐 이것저것 삽질해보니
+
+결국은 colab 에서는 lua도 torch도 지원되지 않는 것 같다.
+
+<br>
+
+
+일단 나는 저 model 말고 다른 model을 사용하기로 했지만,
+
+혹시 나와 같은 에러를 마주한 분들이라면 [torch를 pytorch로 변환하는 코드]("https://github.com/clcarwin/convert_torch_to_pytorch")를 이용해도 좋을 거 같다!
