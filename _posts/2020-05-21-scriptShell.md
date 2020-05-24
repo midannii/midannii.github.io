@@ -69,4 +69,4 @@ lua에서의 torch 더라고 ㅎㅎ,,, 구글링을 더 해보고 설치도 해�
 
 일단 나는 저 model 말고 다른 model을 사용하기로 했지만,
 
-혹시 나와 같은 에러를 마주한 분들이라면 [torch를 pytorch로 변환하는 코드]("https://github.com/clcarwin/convert_torch_to_pytorch")를 이용해도 좋을 거 같다!
+혹시 나와 같은 에러를 마주한 분들이라면 [torch를 pytorch로 변환하는 코드](https://github.com/clcarwin/convert_torch_to_pytorch)를 이용해도 좋을 거 같다!
