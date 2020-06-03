@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "My role - model"
+title:  "My ROLE-MODEL"
 date:   2020-06-01
 desc: "khu sw 개발방법 및 도구"
 keywords: "role-model, homework"
@@ -47,4 +47,4 @@ icon: icon-html
 
 <br>
 
-내가 정말 힘들고 지칠때마다 이 분이 내게 귀감이 되듯이, 나도 누군가에게 귀감이 될 수 있는 개발자가 되어야지. 
+내가 정말 힘들고 지칠때마다 이 분이 내게 귀감이 되듯이, 나도 누군가에게 귀감이 될 수 있는 개발자가 되어야지.
