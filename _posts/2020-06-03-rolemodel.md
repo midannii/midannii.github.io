@@ -5,7 +5,7 @@ date:   2020-06-01
 desc: "khu sw 개발방법 및 도구"
 keywords: "role-model, homework"
 categories: [Research]
-tags: [research, role-model]
+tags: [research, rolemodel]
 icon: icon-html
 ---
 
