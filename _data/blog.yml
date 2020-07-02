@@ -6,8 +6,8 @@
 - name: Python
   href: /python/
 
-- name: C++
-  href: /cpp/
+- name: Golang
+  href: /go/
 
 - name: Deeplearning
   href: /deeplearning/
