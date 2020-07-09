@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "[Python] 백준 알고리즘 PS: 문제출이 (1000, 2558, 11718, 2438, 2522, 2442, 10991)"
+date:   2020-07-08
+desc: " "
+keywords: "python, ps, algorithm"
+categories: [Python]
+tags: [python, algorithm]
+icon: icon-html
+---
+
+
+오늘 푼 문제들은 DP! 즉 Dynamic Programming!
+
+DP란 큰 문제를 작은 문제로 나눠서 푸는 알고리즘으로, 점화식같은 recursive coding 에 해당한당
+
+
+
+
+<br>
