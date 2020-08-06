@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Python] 백준 알고리즘 분할정복(divide & conquer): 문제풀이  "
+title:  "[Python] 백준 알고리즘 분할정복(divide & conquer): 문제풀이 11728, 1780, 11729, 1992"
 date:   2020-08-03
 desc:  " "
 keywords: "python, algorithm, tree"
@@ -165,6 +165,8 @@ for r in result:
 
 
 <br>
+
+[1992: 쿼드트리](https://www.acmicpc.net/problem/1992)이걸 풀고 나니까 분할정복에 대한 감을 완조니 잡은 기분이당 ~!
 
 ```python
 def check_squard(lst):
