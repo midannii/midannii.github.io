@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Python] 백준 알고리즘 분할정복(divide & conquer): 문제풀이  "
-date:   2020-07-20
+date:   2020-08-03
 desc:  " "
 keywords: "python, algorithm, tree"
 categories: [Python]
@@ -124,15 +124,18 @@ for i in solve(paper, counts):
 그래서 [다른 분들의 코드](https://developmentdiary.tistory.com/336)를 조금 살폈당
 
 
-<br>
-
-```python
-```
+ 함수로 모듈화한 부분들을 줄이고, 되도록 for문을 적게 사용하고자 해야하구나,,,
 
 
 
 <br>
 
+[11729: 하노이탑](https://www.acmicpc.net/problem/11729) 은 어엄청 유명한 문제,,
+
+이게 난 완탐이나 dp일 줄 알았는데 분할정복이었구만
+
+
+
 ```python
 ```
 
@@ -142,6 +145,12 @@ for i in solve(paper, counts):
 ```python
 ```
 
+<br>
+
+```python
+```
+
+<br>
 
 ```python
 ```
