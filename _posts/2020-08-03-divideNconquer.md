@@ -137,6 +137,30 @@ for i in solve(paper, counts):
 
 
 ```python
+n = int(input())
+def hanoi(n, start, temp, end):
+    path = []
+    if n==1:
+        path.append([start, end])
+    else:
+        tp = hanoi(n-1, start, end, temp) # step 1) n-1개를 temp번칸으로 이동
+        for t in tp:
+            path.append(t)
+
+        path.append([start, end]) # step 2) 마지막을 end칸으로 이동
+
+        tp = hanoi(n-1, temp, start, end) # step 3) temp번칸에 있던 n-1개를 end번칸으로 이동
+        for t in tp:
+            path.append(t)
+
+    return path
+
+result = hanoi(n, 1, 2, 3)
+print(len(result))
+for r in result:
+    for i in r:
+        print(i, end=" ")
+    print()
 ```
 
 
