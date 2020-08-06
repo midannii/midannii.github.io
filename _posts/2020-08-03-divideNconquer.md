@@ -167,6 +167,42 @@ for r in result:
 <br>
 
 ```python
+def check_squard(lst):
+    standard = lst[0][0]
+    result = []
+    same = True
+    if len(lst)>1:
+        for i in range(len(lst)):
+            if same:
+                for j in range(len(lst)):
+                    if lst[i][j]!=standard:
+                        same = False
+                        break
+                # cut
+        if not same:
+            for t in cut(lst): result.append(check_squard(t))               
+
+    if len(lst)==1 or same:
+        return standard
+
+    return tuple(result)
+
+def cut(lst):
+    result = []
+    n = int(len(lst)/2)
+    result.append([lst[i][:n] for i in range(n)])
+    result.append([lst[i][n:] for i in range(n)])
+    result.append([lst[i][:n] for i in range(n,len(lst))])
+    result.append([lst[i][n:] for i in range(n,len(lst))])
+    return result
+
+
+n = int(input())
+data = []
+for i in range(n):
+    data.append([int(i) for i in input()])
+
+print((str(check_squard(data))).replace(",", '').replace(' ',''))
 ```
 
 <br>
