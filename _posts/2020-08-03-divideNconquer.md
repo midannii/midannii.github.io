@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Python] 백준 알고리즘 분할정복(divide & conquer): 문제풀이 11728, 1780, 11729, 1992"
+title:  "[Python] 백준 알고리즘 분할정복(divide & conquer): 문제풀이 11728, 1780, 11729, 1992, 2447, 1517, 2261 "
 date:   2020-08-03
 desc:  " "
 keywords: "python, algorithm, tree"
@@ -209,10 +209,166 @@ print((str(check_squard(data))).replace(",", '').replace(' ',''))
 
 <br>
 
+[2447](https://www.acmicpc.net/problem/2447)은 별찍기문제당
+
 ```python
+def stars(result, row1, row2, col1, col2):
+    size = row2-row1  # 또는 col2-col1
+    n = int(size/3)
+    for i in range(n,2*n):
+        for j in range(n,2*n):
+            result[row1+i][col1+j] = ' '
+    if n>1:
+        stars(result, row1, row1+n, col1, col1+n)
+        stars(result, row1+n, row1+2*n, col1, col1+n)
+        stars(result, row1+2*n, row2, col1, col1+n)
+
+        stars(result, row1, row1+n, col1+n, col1+2*n)
+        stars(result, row1+2*n, row2, col1+n, col1+2*n)
+
+        stars(result, row1, row1+n, col1+2*n, col2)
+        stars(result, row1+n, row1+2*n, col1+2*n, col2)
+        stars(result, row1+2*n, row2, col1+2*n, col2)
+
+N = int(input())
+result = [["*"]*N for _ in range(N)]
+stars(result, 0, N, 0, N)
+for i in range(len(result)):
+    print(''.join(result[i]))
 ```
+
+
+
+<br>
+
+[1517: bubble sort](https://www.acmicpc.net/problem/1517)도 풀어봤당
+
+위에서 푼 `11728`은 아마 merge sort 인듯
+
+```python
+def bubble(arr, r1, r2):
+    if arr[r1]>arr[r2]:
+        #print('swap with '+ str(arr[r1]) + 'with' + str(arr[r2]) )
+        temp = arr[r1]
+        arr[r1] = arr[r2]
+        arr[r2] = temp
+        return 1
+    return 0
+
+n= int(input())
+nums = [int(i) for i in input().split()]
+
+count = 0
+n_len = len(nums)
+while (n_len !=0):
+    for i in range(n_len-1):
+        count += bubble(nums, i, i+1)
+    n_len-=1
+print(count)
+```
+
+처음에 이렇게 풀었는데,,, 시간 초과가 떠버렸당
+
 
 <br>
 
 ```python
+n= int(input())
+nums = [int(i) for i in input().split()]
+
+count = 0
+for i in range(len(nums), 1, -1):
+    for j in range(i-1):
+        if nums[j]>nums[j+1]:
+            count +=1
+            nums[j], nums[j+1] = nums[j+1], nums[j]
+print(count)
 ```
+
+이후에는 python의 swap 기능을 이용해봤지만 이것도 시간초과 ,,, 왜지
+
+
+
+<br>
+
+
+
+그래서 `divide & conquer` 라는 개념 자체를 놓친다는 생각이 들어서,
+
+O(N^2)를 어떻게 하면 그 이하로 줄일 수 있을까 고민했당
+
+
+휴 결국은 bubble sort 로 구현을 한다면 시간초과가 나는 문제,,,
+
+bubble sort에서 swap 되는 조건을 이용하여 merge sort를 이용해야한다,,,
+
+(아니 그럴거면 왜 bubble sort 라고 한거야 ! )
+
+
+```python
+import sys
+sys.setrecursionlimit(10 ** 9)
+def merge(start, mid, end):
+    arr = []
+    i1, i2 = start, mid
+    count = 0
+    while i1 < mid and i2 < end:
+        if nums[i1] > nums[i2]:
+            arr.append(nums[i2])
+            i2 += 1
+            count += 1
+        else:
+            arr.append(nums[i1])
+            i1 += 1
+            swap += count
+
+    while i1 < mid:
+        arr.append(nums[i1])
+        i1 += 1
+        swap += count
+    while i2 < mid:
+        arr.append(nums[i2])
+        i2 += 1
+
+    for t in range(len(nums)):
+        nums[start + t] = arr[t]
+
+def bubble(start, end):
+    if start != end:
+        mid = int((start+end)/2)
+        bubble(start, mid)
+        bubble(mid, end)
+        merge(start, mid, end)        
+
+n= int(input())
+nums = [i for i in input().split()]
+swap = 0
+bubble(0, n-1)
+print(count)        
+```
+
+
+<br>
+
+[2261](https://www.acmicpc.net/problem/2261)은 가장 가까운 두 점 !
+
+이것도 자꾸 시간초과, 메모리초과 떠서 봤더니 x좌표를 기준으로 나누어야 한다도라,,,
+
+즉, x 좌표의 중간값을 기준으로 잡고 아래와 같이 case 분류를 한당 ( [여기](https://www.acmicpc.net/blog/view/25) 참고 ! )
+
+
+
+ - case 1) 두 점이 모두 기준보다 왼쪽에 존재
+
+ - case 2) 두 점이 각각 왼쪽, 오른쪽에 존재
+
+ - case 3) 두 점이 모두 기준보다 오른쪽에 존재
+
+
+
+```python
+```
+
+
+
+<br>
