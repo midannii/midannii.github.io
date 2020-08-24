@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "[Python] 백준 알고리즘 탐욕 알고리즘(greedy) "
+date:   2020-08-03
+desc:  " "
+keywords: "python, algorithm"
+categories: [Python]
+tags: [python, algorithim]
+icon: icon-html
+---
+
+
+
+
+<br>
+
+
+
+
+`greedy algorithm` 이란, 최적해를 구하는 방법이다.
+
+최적해를 구하는 문제는 주로 최대값이나 최소값 같은 최적의 값을 구하는 것으로, 풀이 방법은 여러개가 있을 수 있당
+
+즉, 여러 경우 중 하나를 선택하는데, 이때 선택시마다 최적이라고 생각되는 것을 선택하여 최종적인 해답에 도달하는 것이당.
+
+
+
+한번 선택하는 것은 번복하지 않으며, 한 선택에서의 최적은 local한 최적이고
+
+local 한 최적만을 수집한다고 해서 최종 해답이 꼭 최적인 건 아니당.
+
+
+1) 현재 상태에서 부분 문제의 최적해를 구해 solution set에 추가
+
+- 이때 새로운 부분 문제가 발생
+
+2) 1)에서 생긴 새로운 부분해 집합의 실행가능 여부, 문제의 제약조건 위반 여부를 검사한다
+
+3) 새로운 부분해 집합이 문제의 해가 되는지 확인하고, 아니라면 1부터 다시 시작한다
+
+
+<br>
+
+대표적인 예로 [배낭문제](https://www.acmicpc.net/problem/12865), [거스름돈 문제](https://www.acmicpc.net/problem/5585), [회의실 배정문제](https://www.acmicpc.net/problem/1931) 가 있다
+
+<br>
+
+```python
+```
+
+
+
+<br>
+
+
+```python
+```
+
+
+
+<br>
+
+
+
+```python
+```
+
+
+
+<br>
+
+
+```python
+```
+
+
+
+<br>
+
+
+```python
+```
+
+
+
+<br>
