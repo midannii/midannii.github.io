@@ -47,15 +47,76 @@ for i in range(1, 7981):
 
 
 
+[9095: 1,2,3으로 나타내기](https://www.acmicpc.net/problem/9095) 는  
+
+뭔가 약간 DP스러워서 엥?? 이런 느낌이었당
+
+
+왜냐면,
+
+1 = (1) -> 1가지
+
+2 = (1+1), (2) -> 2가지
+
+3 = (1+1+1), (2+1), (1+2), (3) -> 4가지
+
+4 = (1+1+1+1), (2+1+1), (1+2+1), (1+1+2), (3+1), (1+3), (2+2) -> 7가지
+
+5 = (1+1+1+1+1), (2+1+1+1), (1+2+1+1), (1+1+2+1), (3+1+1), (1+3+1), (2+2+1),
+
+    (1+1+1+2), (2+1+2), (1+2+2), (3+2),
+
+    (1+1+3), (2+3) -> 13가지
+
+뭐 이런 식이었기 때문,, 즉 정리하자면
+
+
+`n번째 숫자의 경우의 수`는 `n-1에 1을 더한 경우의 수` + `n-2에 2를 더한 경우의 수` + `n-3에 3을 더한 경우의 수` 인 것이당 !
+
+
+
 ```python
+def solve(num, lst):
+    if lst[num] == 0:
+        lst[num] = solve(num-1, lst) + solve(num-2, lst) + solve(num-3, lst)
+    return lst[num]
+
+n = int(input())
+nums = []
+lst = [0,1,2,4] +[0]*7 #[0, 1, 2, 4, 0, 0, 0, 0, 0, 0, 0]
+for i in range(n):
+    num = int(input())
+    nums.append(solve(num, lst))
+
+for num in nums:
+    print(num)
 ```
 
 
 
 <br>
 
+[10819: 차이를 최대로](https://www.acmicpc.net/problem/10819)
+
+이건 
 
 ```python
+def check_list(lst):
+    result = 0
+    for i in range(1,len(lst)):
+        result += abs(lst[i]-lst[i-1])
+    return result
+
+n = int(input())
+num_list = list(map(int, input().split()))
+
+from itertools import permutations
+total = 0
+for lst in permutations(num_list):
+    if total < check_list(lst):
+        #print(check_list(lst))
+        total = check_list(lst)
+print(total)
 ```
 
 
