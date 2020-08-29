@@ -193,7 +193,7 @@ def next_permutation(lst):
 
 
 
-[이건](https://suri78.tistory.com/152) 외판원 문제를 접근하는 다양한 방법 
+[이건](https://suri78.tistory.com/152) 외판원 문제를 접근하는 다양한 방법
 
 
 
@@ -201,7 +201,18 @@ def next_permutation(lst):
 
 
 
+[1697: 숨바꼭질](https://www.acmicpc.net/problem/1697)
 
+
+```python
+```
+
+
+
+<br>
+
+
+[1963: ](https://www.acmicpc.net/problem/1963)
 
 
 ```python
@@ -213,18 +224,7 @@ def next_permutation(lst):
 
 
 
-
-
-```python
-```
-
-
-
-<br>
-
-
-
-
+[9019: ](https://www.acmicpc.net/problem/9019)
 
 ```python
 ```
@@ -235,6 +235,8 @@ def next_permutation(lst):
 
 
 
+
+[2251: ](https://www.acmicpc.net/problem/2251)
 
 
 
