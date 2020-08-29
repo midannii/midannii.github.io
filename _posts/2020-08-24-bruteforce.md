@@ -219,7 +219,7 @@ def next_permutation(lst):
 <br>
 
 
-[1963: ](https://www.acmicpc.net/problem/1963)
+[1963: 소수경로](https://www.acmicpc.net/problem/1963)
 
 
 ```python
@@ -231,7 +231,7 @@ def next_permutation(lst):
 
 
 
-[9019: ](https://www.acmicpc.net/problem/9019)
+[9019: DSLR ](https://www.acmicpc.net/problem/9019)
 
 ```python
 ```
