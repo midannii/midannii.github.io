@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Python] 백준 알고리즘 완전탐색 : Brute Force) "
+title:  "[Python] 백준 알고리즘 완전탐색 : Brute Force) 1476, 9095, 10819 "
 date:   2020-08-03
 desc:  " "
 keywords: "python, algorithm"
@@ -98,7 +98,9 @@ for num in nums:
 
 [10819: 차이를 최대로](https://www.acmicpc.net/problem/10819)
 
-이건 
+이건 `list(map(int, input().split()))` 를 찾아보는 과정에서 permutations 에 대한 힌트를 얻은 거임
+
+사실상 나 혼자 푼게 아니지 뭐얌 ㅎㅅㅎ
 
 ```python
 def check_list(lst):
@@ -122,6 +124,118 @@ print(total)
 
 
 <br>
+
+
+
+[10971: 외판원문제 2](https://www.acmicpc.net/problem/10971)도 풀었당
+
+
+
+
+```python
+def find_cost(lst, w):
+    total = 0
+    for i in range(len(lst)-1):
+        total += w[lst[i]][lst[i+1]]
+    return total
+
+
+n = int(input())
+w = []
+#  W[i][j]는 도시 i에서 j로 가기 위한 비용
+for i in range(n):
+    w.append(list(map(int, input().split())))
+
+lst = [i for i in range(0,n)]
+from itertools import permutations
+lst = permutations(lst)
+min_cost = pow(100,10)
+
+for l in lst:
+    l = list(l)
+    l.append(l[0])
+    if min_cost > find_cost(l,w):
+        min_cost = find_cost(l,w)
+
+print(min_cost)
+```
+
+
+대강 개념을 이해하니까 나름 쉬웠다고 생각하는데
+
+음 왜 틀렸는지 모르겠당
+
+
+```python
+# 출처: https://hjp845.tistory.com/70
+
+def next_permutation(lst):
+    n = len(lst)
+    i = n - 1
+    while i > 0 and lst[i - 1] >= lst[i]:
+        i -= 1
+    if i == 0:
+        return [-1]
+    # i - 1
+    j = n - 1
+    while lst[j] <= lst[i - 1]:
+        j -= 1
+    tmp = lst[j]
+    lst[j] = lst[i - 1]
+    lst[i - 1] = tmp
+
+    lst = lst[:i] + sorted(lst[i:])
+    return lst
+
+```
+
+이건 모듈 import가 불가할 때를 대비한 permutation 함수
+
+
+
+[이건](https://suri78.tistory.com/152) 외판원 문제를 접근하는 다양한 방법 
+
+
+
+<br>
+
+
+
+
+
+
+```python
+```
+
+
+
+<br>
+
+
+
+
+
+```python
+```
+
+
+
+<br>
+
+
+
+
+
+```python
+```
+
+
+
+<br>
+
+
+
+
 
 
 ```python
