@@ -243,7 +243,7 @@ def next_permutation(lst):
 
 
 
-[2251: ](https://www.acmicpc.net/problem/2251)
+[2251: 물통](https://www.acmicpc.net/problem/2251)
 
 
 
