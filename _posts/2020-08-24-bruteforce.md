@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Python] 백준 알고리즘 완전탐색 : Brute Force) 1476, 9095, 10819 "
+title:  "[Python] 백준 알고리즘 완전탐색 : Brute Force) 1476, 9095, 10819, 10971, 1963, 9019, 2251  "
 date:   2020-08-03
 desc:  " "
 keywords: "python, algorithm"
