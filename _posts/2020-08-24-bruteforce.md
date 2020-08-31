@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Python] 백준 알고리즘 완전탐색 : Brute Force) 1476, 9095, 10819, 10971, 1963, 9019, 2251  "
+title:  "[Python] 백준 알고리즘 완전탐색 : Brute Force) 1476, 9095, 10819, 10971, 1697, 1963, 9019, 2251  "
 date:   2020-08-03
 desc:  " "
 keywords: "python, algorithm"
@@ -208,10 +208,39 @@ def next_permutation(lst):
 
 
 
-[1697: 숨바꼭질](https://www.acmicpc.net/problem/1697)
+[1697: 숨바꼭질](https://www.acmicpc.net/problem/1697)도 DP로 풀려다가
+
+아 이건 아닌거 같아서 구글링해보니 BFS 로 푸는 경우도 많더랑,,,
 
 
 ```python
+
+count = 0
+n, k = map(int, input().split()) # 각각 수빈, 동생의 위치
+print(solve(n,k))
+
+# https://chaewonkong.github.io/posts/python-boj-1697.html
+from collections import deque
+
+MAX = 100001
+def solution(n, k):
+    q = deque([n])
+    visit = [0] * MAX
+
+    def nextPos(next, cur):
+        if 0 <= next and next < MAX:
+            if visit[next] == 0 or (visit[cur] + 1 < visit[next]):
+                visit[next] = visit[cur] + 1
+                q.append(next)
+
+    while q:
+        cur = q.popleft()
+        if cur == k:
+            return visit[cur]
+        nextPos(cur - 1, cur)
+        nextPos(cur + 1, cur)
+        nextPos(cur * 2, cur)
+
 ```
 
 
@@ -219,10 +248,58 @@ def next_permutation(lst):
 <br>
 
 
-[1963: 소수경로](https://www.acmicpc.net/problem/1963)
+[1963: 소수경로](https://www.acmicpc.net/problem/1963)는
+
+단순 재귀로 풀고 싶어서 아래처럼 풀었는데 다들 BFS로 푸시더라구,,,
 
 
 ```python
+# 에라토스테네스의 채 이용
+num=10000
+a = [False,False] + [True]*(n-1)
+primes=[]
+
+for i in range(1000,num+1):
+    if a[i]:
+        primes.append(i)
+        for j in range(2*i, n+1, i):
+            a[j] = False
+
+def solve(a, b):
+    if a!=b:
+        a_num = [int(str(a)[0]), int(str(a)[1]) , int(str(a)[2]) , int(str(a)[3]) ]
+        b_num = [int(str(b)[0]), int(str(b)[1]) , int(str(b)[2]) , int(str(b)[3]) ]
+        # case 1: 천의 자리
+        if (a_num[0] > b_num[0]) and (a-1000 in primes):
+            return 1+solve(a-1000, b)
+        elif (a_num[0] < b_num[0]) and (a+1000 in primes):
+            return 1+solve(a+1000, b)
+        # case 2: 백의 자리
+        if (a_num[1] > b_num[1]) and (a-100 in primes):
+            return 1+solve(a-100, b)
+        elif (a_num[0] < b_num[0]) and (a+100 in primes):
+            return 1+solve(a+100, b)
+        # case 3: 십의 자리
+        if (a_num[2] > b_num[2]) and (a-10 in primes):
+            return 1+solve(a-10, b)
+        elif (a_num[2] < b_num[2]) and (a+10 in primes):
+            return 1+solve(a+10, b)
+        # case 4: 일의 자리
+        if (a_num[3] > b_num[3]) and (a-1 in primes):
+            return 1+solve(a-1, b0)
+        elif (a_num[3] < b_num[3]) and (a+1 in primes):
+            return 1+solve(a+1, b)
+    else:
+        return 0
+
+n = int(input())    
+result = []
+for i in range(n):
+    a,b = map(int,input().split())
+    result.append(solve(a, b))
+
+for re in result:
+    print(re)
 ```
 
 
@@ -231,25 +308,65 @@ def next_permutation(lst):
 
 
 
-[9019: DSLR ](https://www.acmicpc.net/problem/9019)
+[9019: DSLR ](https://www.acmicpc.net/problem/9019) 은 좀 어려워서 , 구글링했당
+
+생각보다 BFS, DFS 로 접근하는 경우가 많아서, 개강하고 알고리즘 수업 들으면 다시 풀어봐야징
 
 ```python
+# https://suri78.tistory.com/155
+
+import sys
+from collections import deque
+
+def bfs():
+    queue = deque([(first, '')])
+    visited[first] = 1
+
+    while queue:
+        now, cmd = queue.popleft()
+        if now == last:
+            return cmd
+
+        l_now = len(str(now))
+
+        t = (now*2)%bound
+        if not visited[t]:
+            visited[t] = 1
+            queue.append((t, cmd + 'D'))
+
+        t = (now-1)%bound
+        if not visited[t]:
+            visited[t] = 1
+            queue.append((t, cmd + 'S'))
+
+        if l_now != 4:
+            t = now*10
+        else:
+            t, d = divmod(now, 10**(l_now-1))
+            t += (d*10)
+        if not visited[t]:
+            visited[t] = 1
+            queue.append((t, cmd + 'L'))
+
+        if l_now == 1:
+            t = now*1000
+        else:
+            t, d = divmod(now, 10)
+            t += (d*1000)
+        if not visited[t]:
+            visited[t] = 1
+            queue.append((t, cmd + 'R'))
+
+
+testcase = int(sys.stdin.readline())
+bound = 10000
+for _ in range(testcase):
+    first, last = map(int, sys.stdin.readline().split())
+    visited = [0]*bound
+    print(bfs())
+
+
+출처: https://suri78.tistory.com/155 [공부노트]
+
 ```
-
-
-
-<br>
-
-
-
-
-[2251: 물통](https://www.acmicpc.net/problem/2251)
-
-
-
-```python
-```
-
-
-
 <br>
