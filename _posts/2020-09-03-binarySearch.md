@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Python] 백준 알고리즘 이진탐색 알고리즘(binary search): 1654, 2805, 2110, 10815, 10816, 11662 "
+title:  "[Python] 백준 알고리즘 이진탐색 알고리즘(binary search): 1654, 2805, 10815,  11662 "
 date:   2020-08-31
 desc:  " "
 keywords: "python, algorithm"
@@ -149,15 +149,6 @@ print(length)
 
 
 
-<br>
-
-
-[2110: 공유기 설치 ](https://www.acmicpc.net/problem/2110)
-
-
-
-```python
-```
 
 
 
@@ -167,6 +158,30 @@ print(length)
 
 
 ```python
+
+n = int(input())
+n_list = list(map(int, input().split()))
+m = int(input())
+m_list = list(map(int, input().split()))
+
+m_list.sort()
+n_list.sort()
+
+for i in range(m):
+    answer = 0
+    left = 0
+    right = n - 1
+    mid = (left + right) // 2
+    while(left <= right):
+        if n_list[mid] == m_list[i]:
+            answer = 1
+            break
+        elif n_list[mid] < m_list[i]:
+            left = mid + 1
+        else:
+            right = mid - 1
+            mid = (left + right) // 2
+    print(answer,end = ' ')
 ```
 
 
@@ -179,7 +194,7 @@ print(length)
 
 [11662: 민호와 강호 ](https://www.acmicpc.net/problem/11662) 는 binary search로 적용하는 아이디어가 너모 힘들었당
 
-알고보니까 tetra search 였음 엉엉 
+알고보니까 tetra search 였음 엉엉
 
 
 
