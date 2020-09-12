@@ -2,6 +2,21 @@
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 
 - name:
+    detail: KHU
+    i18n: company_a
+  desc:
+    detail: KHU BIO & SW
+    i18n: company_a_desc
+  date:
+    detail: Feb. 2018
+    i18n: company_a_date
+  job:
+    detail: Bachelor
+    i18n: company_a_job
+  icon: fa-plus-square
+  present: true
+
+- name:
     detail: KHU sysbioinfo lab
     i18n: company_a
   desc:
