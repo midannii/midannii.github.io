@@ -7,3 +7,18 @@
   repo: ko-chat-checker
   img: /static/assets/img/landing/python.png
   desc: This is my project, "Capstone Design of data analysis"
+
+
+- name: Movie-minjok
+    i18n: jalpc
+    gh_user: midannii
+    repo: movie-minjok
+    img: /static/assets/img/landing/python.png
+    desc: This is my project, DataBase & Full-stack web
+
+- name: predict-mental-disorder
+  i18n: jalpc
+  gh_user: midannii
+  repo: Prediction-of-Mental-Disorder
+  img: /static/assets/img/landing/python.png
+  desc: This is my project, "Capstone Design of SW"
