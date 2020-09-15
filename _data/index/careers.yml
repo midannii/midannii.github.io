@@ -18,15 +18,15 @@
 
 - name:
     detail: KHU sysbioinfo lab
-    i18n: company_a
+    i18n: company_b
   desc:
     detail: I worked at "https://www.sysbioinfo.com/"
-    i18n: company_a_desc
+    i18n: company_b_desc
   date:
     detail: Jan. 2020
-    i18n: company_a_date
+    i18n: company_b_date
   job:
     detail: Intern
-    i18n: company_a_job
+    i18n: company_b_job
   icon: fa-plus-square
   present: true
