@@ -2,5 +2,5 @@
 
 label: Ability
 id : cs
-aspects: Biology, Deep Learing, Python, C++, HTML5, Linux
+aspects: Biology, Deep Learing, Python, C++, HTML, SQL
 percentage: 75, 75, 85, 60, 40, 40

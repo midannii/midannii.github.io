@@ -6,13 +6,13 @@
 - name: Python
   href: /python/
 
-- name: Golang
-  href: /go/
+- name: FE
+  href: /fe/
 
 - name: Deeplearning
   href: /deeplearning/
 
-- name: Database
+- name: DB&BE
   href: /database/
 
 - name: Research
