@@ -104,3 +104,31 @@ Auto-regeneration: enabled for '/Users/midan/go/src/github.com'
 `jekyll.rb`, `utils.rb` 파일을 열어봤당
 
 사실 루비 파일이라서 자세히 해석은 못해봄,,,
+
+
+
+
+
+
+<br>
+
+
+돌고 돌아 결국 [이런 글](https://github.com/jekyll/jekyll/issues/8416)도 남겼고,,,
+
+그 결과 [지킬 커뮤니티](https://talk.jekyllrb.com/) 회원가입까지 완료,,
+
+
+
+<br>
+
+그리고! [해당 카테고리에 bundler를 제대로 설치](https://gist.github.com/MichaelCurrin/5c8c45a86bcf53d7b49a7763c02943b1)하라는 글을 찾아 드뎌 성공,,,! (감격)
+
+
+
+```
+$ bundle config set --local path vendor/bundle              
+$ bundle install    
+```
+
+
+감동 이제 드뎌 멀쩡한 블로그 획득 ~!
