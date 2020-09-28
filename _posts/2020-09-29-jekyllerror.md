@@ -94,3 +94,13 @@ Auto-regeneration: enabled for '/Users/midan/go/src/github.com'
 ```
 
 요런 에러가 엄청 많이 뜨는 것이다,,
+
+
+
+<br>
+
+일단은 어떤 에러가 나타나는지 기다리기로 하고,
+
+`jekyll.rb`, `utils.rb` 파일을 열어봤당
+
+사실 루비 파일이라서 자세히 해석은 못해봄,,,
