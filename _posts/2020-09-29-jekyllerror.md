@@ -51,6 +51,10 @@ $ jekyll build --verbose --trace
 
 
 ```
+Traceback (most recent call last):
+.
+.
+.
 4: from ~~~/lib/ruby/gems/2.6.0/gems/jekyll-4.1.1/lib/jekyll/reader.rb:48:in `each'
 3: from ~~/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/jekyll-4.1.1/lib/jekyll/reader.rb:52:in `block in read_directories'
 2: from ~~/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/jekyll-4.1.1/lib/jekyll/utils.rb:141:in `has_yaml_header?'
@@ -58,4 +62,35 @@ $ jekyll build --verbose --trace
 ```
 
 
-아 참고로 ~로 처리한 건 내 Path라서 가려버린 것 
+아 참고로 ~로 처리한 건 내 Path라서 가려버린 것
+
+
+아니 근데 golanci/golanci-lint가 왜 내 깃허브 하위 디렉토리에 있는거야..?
+짜증나서 golanci 폴더를 지워버림
+
+
+
+이후 다시 실행했더니,
+
+
+```
+$ jekyll build --verbose --trace
+
+Incremental build: disabled. Enable with --incremental
+     Generating...
+                   done in 4.462 seconds.
+Auto-regeneration: enabled for '/Users/midan/go/src/github.com'
+   Server address: http://127.0.0.1:4000
+ Server running... press ctrl-c to stop.
+       ** ERROR: directory is already being watched! **
+
+       Directory: /Users/midan/go/src/github.com/alecthomas/gometalinter/_linters/src
+
+       is already being watched through: /Users/midan/go/src/github.com/alecthomas/gometalinter/_linters/src
+
+       MORE INFO: https://github.com/guard/listen/wiki/Duplicate-directory-errors
+
+
+```
+
+요런 에러가 엄청 많이 뜨는 것이다,,
