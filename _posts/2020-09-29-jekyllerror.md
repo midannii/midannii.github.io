@@ -35,9 +35,27 @@ bundle 부터 차근차근 깔아주고
 
 ```
 $ jekyll build --verbose --trace
-
-/lib/jekyll/utils.rb:141:in 'initialize': Too many levels of symbolic links @ rb_sysopen - /Users/midan/go/src/github.com/golangci/golangci-lint/test/testdata/symlink_loop/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg (Errno::ELOOP)
+.
+.
+(생략)
+.
+.
+.
+~~~~/lib/jekyll/utils.rb:141:in 'initialize': Too many levels of symbolic links @ rb_sysopen - ~~/github.com/golangci/golangci-lint/test/testdata/symlink_loop/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg/pkg/subpkg (Errno::ELOOP)
 ```
 
 
 이라는 에러가 떠버린것,, 근데 저 위에 로그도 엄청 많았다,,, 대환장
+
+로그는 이렇게 네개가 반복적으로, 총 315개 있었음 아오
+
+
+```
+4: from ~~~/lib/ruby/gems/2.6.0/gems/jekyll-4.1.1/lib/jekyll/reader.rb:48:in `each'
+3: from ~~/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/jekyll-4.1.1/lib/jekyll/reader.rb:52:in `block in read_directories'
+2: from ~~/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/jekyll-4.1.1/lib/jekyll/utils.rb:141:in `has_yaml_header?'
+1: from ~~/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/jekyll-4.1.1/lib/jekyll/utils.rb:141:in `open'
+```
+
+
+아 참고로 ~로 처리한 건 내 Path라서 가려버린 것 
