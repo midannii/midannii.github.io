@@ -59,17 +59,52 @@ def solution(n, edge):
 
 답이 틀린 것도 있지만, 시간초과도 네가지 case나 있어서 수정이 필요했음 !
 
-결국은 그냥 BFS, 아니면 DFS로 풀기로 결심했다!
+결국은 그냥 BFS 아니면 DFS로 풀기로 결심했다!
 
+
+그런데 대충 다른 분들의 코드를 보니 다들 BFS로 푸셨더라,,
+
+아마도 1에서 그 다음 node인 2,3을 모두 시도해야 하기 때문이 아니였나 싶다!
+
+하여튼 BFS 를 이용해서 풀어본 코드는 아래와 같다
 
 ```Python
+
+import queue
+# with BFS
+def solution(n, edge):
+    '''
+    input: 노드의 개수 n, 간선에 대한 정보가 담긴 2차원 배열 vertex
+    output: 1번 노드로부터 가장 멀리 떨어진 노드(최단경로로 이동했을 때 간선의 개수가 가장 많은 노드)가 몇 개인지
+    각 노드는 1부터 n까지 번호가 적혀있음
+    '''
+    answer = 0
+    # 각 node가 어떤 node와 연결되어 있는지 정리
+    nodeList = []
+    adjencyList = [[] for i in range(n+1)]
+    for e in edge: #각각 1~n이 어떤 vertex와 edge를 가지고 있는지
+        adjencyList[e[0]].append(e[1])
+    #print(adjencyList)
+    q=queue.Queue()
+    q.put(1)
+    visitedVertex = []
+    while q.qsize():
+        current = q.get()
+        for neighbor in adjencyList[current]: # 해당 node에 연결되어 있는 애들 파악하기
+            if not neighbor in visitedVertex:
+                visitedVertex.append(neighbor)
+                if len(adjencyList[neighbor])==1: break
+                else:
+                    for nei in adjencyList[neighbor]:
+                        q.put(nei)
+            #
+            #    q.put(neighbor)
+        #visitedVertex.append(current)
+
+    answer = len(visitedVertex)
+    return answer
 ```
 
+그치만 역시 이번에도 일부만 맞았구,,
 
-<br>
-
-
-```Python
-```
-
-<br>
+일단 오늘은 여기까지 하구, BFS 와 DFS를 풀어본 이후에 다시 도전해봐야겠당 
