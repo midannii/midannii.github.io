@@ -76,6 +76,15 @@ def solution(n, times):
 
 이런 코드를 작성해봤는데도 여전히 너무 틀렸고,
 
-한시간이 넘게 고민해도 해답을 찾을 수 없어서, 내가 binary search의 기준 및 어떤 값을 탐색해야 할지를 모르는 것 같아
+한시간이 넘게 고민해도 해답을 찾을 수 없어서, 내가 binary search의 기준 및 어떤 값을 탐색해야 할지를 모르는 것 같아, 다른 분들의 풀이을 참고하였다.
 
-[다른 분들의 풀이](https://post.naver.com/viewer/postView.nhn?volumeNo=27248090&memberNo=33264526)을 참고하였다. 
+아 앞으로 다른 분들의 풀이를 참고할 때에는 그냥 `오 그렇군!` 하고 넘기지 않고, 최소 3명의 코드를 비교해보고 스스로 짜봐야 겠다.. 안그러면 빠르게 까먹는듯 ㅠㅠ 
+
+[참고 1](https://wwlee94.github.io/category/algorithm/binary-search/immigration/)
+
+[참고 2](https://post.naver.com/viewer/postView.nhn?volumeNo=27248090&memberNo=33264526)
+
+
+```Python
+
+```
