@@ -46,25 +46,36 @@ def solution(n, times):
 
 
 ```Python
-
 def solution(n, times):
     '''
     input : 입국심사를 기다리는 사람 수 n,
             각 심사관이 한 명을 심사하는데 걸리는 시간이 담긴 배열 times
     '''
     answer = 0
+    times.sort()
     # 한번에 심사를 받을 수 있는 경우
     if n<=len(times): answer = times[n-1]
     # 한번에 심사를 받을 수 없는 경우
     else:
         if n%len(times) == 0:
             min_test = 10000
-            for i in range(len(times)):
+            for i in range(1,len(times)+1):
+                #print(i)
                 if min_test > solution(n-i, times)+times[i-1]:
                     min_test = solution(n-i, times)+times[i-1]
+                    print(min_test)
             answer = min_test
-        else: answer = times[len(times)%n-1]*(int(n/len(times))+1)
+            #print(answer)
+        else:
+            #print(times[n%len(times)-1])
+            #print((int(n/len(times))+1))
+            answer = times[n%len(times)-1]*(int(n/len(times))+1)
     return answer
+
 ```
 
-요렇게 작성해보니 또 recursion limit에 걸렸고,,
+이런 코드를 작성해봤는데도 여전히 너무 틀렸고,
+
+한시간이 넘게 고민해도 해답을 찾을 수 없어서, 내가 binary search의 기준 및 어떤 값을 탐색해야 할지를 모르는 것 같아
+
+[다른 분들의 풀이](https://post.naver.com/viewer/postView.nhn?volumeNo=27248090&memberNo=33264526)을 참고하였다. 
