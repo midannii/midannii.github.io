@@ -1,0 +1,13 @@
+current directory: /Users/midan/midannii.github.io/vendor/bundle/ruby/2.6.0/gems/json-2.3.1/ext/json
+/Users/midan/.rbenv/versions/2.6.4/bin/ruby -I /Users/midan/.rbenv/versions/2.6.4/lib/ruby/site_ruby/2.6.0 -r ./siteconf20201027-88886-1fijb8i.rb extconf.rb
+creating Makefile
+
+current directory: /Users/midan/midannii.github.io/vendor/bundle/ruby/2.6.0/gems/json-2.3.1/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/midan/midannii.github.io/vendor/bundle/ruby/2.6.0/gems/json-2.3.1/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/midan/midannii.github.io/vendor/bundle/ruby/2.6.0/gems/json-2.3.1/ext/json
+make "DESTDIR=" install
