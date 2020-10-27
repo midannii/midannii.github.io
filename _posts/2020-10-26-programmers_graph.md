@@ -19,7 +19,7 @@ icon: icon-html
 
 처음에 작성한 코드는 아래와 같다.
 
-```Python
+```python
 def solution(n, edge):
     '''
     input: 노드의 개수 n, 간선에 대한 정보가 담긴 2차원 배열 vertex
@@ -68,7 +68,7 @@ def solution(n, edge):
 
 하여튼 BFS 를 이용해서 풀어본 코드는 아래와 같다
 
-```Python
+```python
 
 import queue
 # with BFS
@@ -107,4 +107,4 @@ def solution(n, edge):
 
 그치만 역시 이번에도 일부만 맞았구,,
 
-일단 오늘은 여기까지 하구, BFS 와 DFS를 풀어본 이후에 다시 도전해봐야겠당 
+일단 오늘은 여기까지 하구, BFS 와 DFS를 풀어본 이후에 다시 도전해봐야겠당

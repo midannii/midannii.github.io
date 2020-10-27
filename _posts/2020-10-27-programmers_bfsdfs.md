@@ -21,7 +21,7 @@ icon: icon-html
 이때 DFS를 통해, 각 path별로 지나온 길들을 다 더한 총합이 target이 되는 경우의 수를 생각해보면 된다.
 
 
-```Python
+```python
 numbers = [1, 2, 3, 4]
 result = []
 for i in range(len(numbers)-1):
@@ -45,19 +45,19 @@ for i in range(len(numbers)-1):
 이건 약간 dfs, bfs 의 정석??
 
 
-```Python
+```python
 ```
 
 
 
-```Python
+```python
 ```
 
 
 
-```Python
+```python
 ```
 
 
-```Python
+```python
 ```

@@ -21,7 +21,7 @@ icon: icon-html
 처음에 작성한 코드는 아래와 같은데, test case는 통과했지만 답은 틀렸당
 
 
-```Python
+```python
 def solution(n, times):
     '''
     input : 입국심사를 기다리는 사람 수 n,
@@ -70,7 +70,7 @@ def solution(n, times):
 - BS 할 값: 한명의 심사원에게 얼마의 시간을 줄 것인가
 
 
-```Python
+```python
 def solution(n, times):
     '''
     input : 입국심사를 기다리는 사람 수 n,
