@@ -11,6 +11,7 @@ icon: icon-html
 <br>
 
 
+
 1. 타겟 넘버
 
 
@@ -48,10 +49,26 @@ for i in range(len(numbers)-1):
 
 다들 dfs 함수 만들어서 쓰는 거 보고 충격이었던 내 모습이 떠올라 급하게 다시 해봄
 
+그리고 단순히 dfs를 탐색하는 것 뿐 아니라, visitedList의 sum이 target과 같은지 조건을 추가하고자 했다.
 
+
+왜냐하면 이 문제는 다른 dfs랑 다르게 양수일때와 음수일때가 나뉘어서 ㅠㅠㅠ 그걸 코드로 녹여내기가 너무 어려웠음
+
+이것저것 참고했고 아래와 같이 해결했다.
+
+
+[참고 1](https://eda-ai-lab.tistory.com/475)
+
+[참고 2](https://velog.io/@seovalue/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%83%80%EA%B2%9F%EB%84%98%EB%B2%84-python)
+
+[참고 3](https://train-validation-test.tistory.com/entry/Programmers-level-2-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84-python)
 
 ```python
 ```
+
+ 해결하기는 했는데
+
+내가 했던 대로 adjency List는 왜 잘 안쓰는걸까 ㅠㅠㅠ 코딩테스트라는 제한적인 시간과 메모리 공간 때문인듯 하다 ㅜㅜ
 
 
 2. 네트워크
