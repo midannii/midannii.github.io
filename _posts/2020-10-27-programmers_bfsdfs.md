@@ -43,7 +43,7 @@ for i in range(len(numbers)-1):
 ```
 
 
-이건 약간 dfs, bfs 의 정석??
+이런 adjencyList는 약간 dfs, bfs 의 정석??ㅋ쿠ㅜㅠㅠ
 
 그런데 이게 진짜 ㅋㅋㅋ 저번에 DFS 풀었을 떄에도 똑같이 열심히 vertex array 만들었는데,,,
 
@@ -70,18 +70,90 @@ for i in range(len(numbers)-1):
 
 내가 했던 대로 adjency List는 왜 잘 안쓰는걸까 ㅠㅠㅠ 코딩테스트라는 제한적인 시간과 메모리 공간 때문인듯 하다 ㅜㅜ
 
+<br>
 
 2. 네트워크
 
+이번 문제에서는 아예 adjencyMatrix가 입력으로 주어졌다!
+
+주어진 matrix는 A = AT가 같고, Aii가 모두 1이므로, 대각선 위 or 대각선 아래의 정보만 이용하면 되지롱 !
+
+그리고 각 네트워크가 1차원이라,,, BFS로 풀던가 DFS로 풀던가 무관했다
+
+그치만 난 앞에서 DFS를 풀어봤으니 BFS로 도전해봄!
+
 
 ```python
+
+def solution(n, computers):
+    '''
+    input: 컴퓨터의 개수 n, 연결에 대한 정보가 담긴 2차원 배열 computers
+    output: 네트워크의 개수
+    '''
+    count = 0
+    for i in range(n):
+        for j in range(n):
+            if i>j and computers[i][j]==1: count +=1
+    answer = n-count
+    return answer
+
 ```
 
+뭔가 직감적으로 생각했을 때에는 위와 같았지만, 네트워크 개수를 처리하는 부분에서 틀렸지롱
 
 
 ```python
+def solution(n, computers):
+    '''
+    input: 컴퓨터의 개수 n, 연결에 대한 정보가 담긴 2차원 배열 computers
+    output: 네트워크의 개수
+    '''
+    count = 0
+    visited = [False]*n
+    for i in range(n):
+        for j in range(n):
+            if i>j and computers[i][j]==1:
+                count +=1
+                visited.append(i)
+                visited.append(j)
+    answer = n - len(set(visited)) + 1
+    return answer
 ```
+
+그래서 방문한 node를 기준으로 visited 라는 리스트를 만들었지만, 여전히 정확성은 70%였구,,,
+
+아마도 직접 BFS를 안써서이겠지? 마지막으로 아래와 같이 수정했다.
 
 
 ```python
+def solution(n, computers):
+    '''
+    input: 컴퓨터의 개수 n, 연결에 대한 정보가 담긴 2차원 배열 computers
+    output: 네트워크의 개수
+    '''
+    answer = 0
+    bfs = [0] # 첫번쨰 방문 node
+    visited = [0]*n
+    while bfs:
+        curr = bfs.pop()
+        visited[curr] = 1
+        print(curr)
+        for i in range(n):
+            if visited[curr] == 0 and computers[curr][i] ==1:
+                bfs.append(i)
+                print(i)
+                visited[curr] = True
+        answer+=1
+    return answer
 ```
+
+그런데 이렇게 하면, visited에 모든 element가 true가 되지 않는다.
+
+나와 비슷한 방식대로 한 분들의 코드를 보며 보완했다!
+
+웬만하면 참고 1처럼, 하나의 함수로 모두 수행하고싶다 엉엉 
+
+
+[참고 1](https://cocojelly.github.io/algorithm/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%97%B0%EC%8A%B5-DFS-BFS-(2)/)
+
+[참고 2](https://codedrive.tistory.com/159)
