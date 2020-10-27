@@ -73,7 +73,21 @@ Could not find 'jekyll-sass-converter' (~> 2.0) - did find: [jekyll-sass-convert
 결론은 gemfile에서 필요한 `jekyll-sass-converter`의 버전은 2.0 이상인데, 지킬에서 사용하는 버전은 1.5.2이였고
 
 
-둘 중 하나라도 지우면 `Coud not file` 에러가, 
+둘 중 하나라도 지우면 `Coud not file` 에러가,
 
 
 지우지 않으면 `You have already activated jekyll-sass-converter 2.1.0, but your Gemfile requires jekyll-sass-converter 1.5.2. `에러가 뜸 (대환장)
+
+
+
+
+3. bundle exec jekyll serve.
+
+
+
+이렇게 하면, 내 midannii.github.io 페이지는 unable to connect 떠서
+
+local에서만 만들어진다 엉엉
+
+
+<br>
