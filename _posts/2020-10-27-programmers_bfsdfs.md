@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "[Programmers] 알고리즘 오랜만에 복습 [3] BFS,DFS - 타켓 넘버 "
+title:  "[Programmers] 알고리즘 오랜만에 복습 [3] BFS,DFS - 타켓 넘버, 네트워크 "
 date:   2020-10-27
 desc: " "
 keywords: "python, Programmers, algorithm"
 categories: [Python]
-tags: [python, algorithm, BinarySearch]
+tags: [python, algorithm, dfs, bfs]
 icon: icon-html
 ---
 <br>
@@ -44,10 +44,17 @@ for i in range(len(numbers)-1):
 
 이건 약간 dfs, bfs 의 정석??
 
+그런데 이게 진짜 ㅋㅋㅋ 저번에 DFS 풀었을 떄에도 똑같이 열심히 vertex array 만들었는데,,,
+
+다들 dfs 함수 만들어서 쓰는 거 보고 충격이었던 내 모습이 떠올라 급하게 다시 해봄
+
+
 
 ```python
 ```
 
+
+2. 네트워크
 
 
 ```python

@@ -5,7 +5,7 @@ date:   2020-10-26
 desc: " "
 keywords: "python, Programmers, algorithm"
 categories: [Python]
-tags: [python, algorithm, BinarySearch]
+tags: [python, algorithm, graph]
 icon: icon-html
 ---
 <br>
