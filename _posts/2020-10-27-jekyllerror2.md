@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Issue]내 지킬 블로그 업로드가 안된다 왜지 ..? [2탄] "
-date:   2020-09-29
+date:   2020-10-29
 desc: "Step by steps: issue and googling "
 keywords: "jekyll, github, blog"
 categories: [Research]
