@@ -4,7 +4,7 @@ title:  "[Programmers] SQL 알고리즘 [1] SQL -  모든 레코드 조회하기
 date:   2020-10-29
 desc: " "
 keywords: "python, Programmers, algorithm"
-categories: [DB&BE]
+categories: [Database]
 tags: [sql, algorithm, db]
 icon: icon-html
 ---
