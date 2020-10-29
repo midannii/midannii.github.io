@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Programmers] SQL 알고리즘 [1] SQL -  모든 레코드 조회하기 , 아픈 동물 찾기, 상위 n개 레코드  "
+title:  "[Programmers] SQL 알고리즘 [1] Select -  모든 레코드 조회하기 , 아픈 동물 찾기, 상위 n개 레코드  "
 date:   2020-10-29
 desc: " "
 keywords: "python, Programmers, algorithm"
