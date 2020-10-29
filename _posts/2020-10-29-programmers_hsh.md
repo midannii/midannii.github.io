@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Programmers] 알고리즘 오랜만에 복습 [6] heap, stack, queue, hash - 더 맵게, 주식 가격, 다리를 지나는 트럭, 전화번호 목록 "
+title:  "[Programmers] 알고리즘 오랜만에 복습 [6] heap, stack, queue, hash - 더 맵게, 주식 가격, 다리를 지나는 트럭, 위장 "
 date:   2020-10-29
 desc: " "
 keywords: "python, Programmers, algorithm"
@@ -90,11 +90,83 @@ def solution(prices):
 
 3. 다리를 지나는 트럭 [stack]
 
+처음에는 이렇게 했는데, 이러면 한번에 2대 이상의 트럭이 지나가는 경우를 따지기가 어려웠당
+
 ```python
+def solution(bridge_length, weight, truck_weights):
+    '''
+    트럭은 1초에 1만큼 움직임!
+    다리 길이 bridge_length, 다리가 견딜 수 있는 무게 weight,
+    트럭별 무게 truck_weights가 주어집니다.
+    이때 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 return
+    '''
+    time = -1
+    truck_weights.reverse()
+    counts = len(truck_weights)
+    #print(truck_weights)
+    #print(time)
+    while truck_weights:
+        time += bridge_length
+        truck_weights.pop()
+        time +=1
+        #print(truck_weights)
+        #print(time)
+        if len(truck_weights)>1 and truck_weights[-1]+truck_weights[-2]<=weight:
+            truck_weights.pop()
+        if len(truck_weights)==0: break
+    return time
+```
+
+다른 분의 코드를 참고하여, `on_bridge`와 `on_time`을 추가한 코드를 만드렀당
+
+```python
+def solution(bridge_length, weight, truck_weights):
+    '''
+    트럭은 1초에 1만큼 움직임!
+    다리 길이 bridge_length, 다리가 견딜 수 있는 무게 weight,
+    트럭별 무게 truck_weights가 주어집니다.
+    이때 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 return
+    '''
+    time = 0
+    on_bridge = []
+    on_time = []
+
+    while(truck_weights or on_bridge) :
+        time += 1
+        if(on_time) :
+            if(on_time[0] + bridge_length == time) :
+                on_bridge.pop(0)
+                on_time.pop(0)
+        if(truck_weights) :
+            if(sum(on_bridge) + truck_weights[0] <= weight) :
+                on_bridge.append(truck_weights.pop(0))
+                on_time.append(time)
+
+    return time
 ```
 
 
-4. 전화번호 목록 [hash]
+4. 위장 [hash]
 
 ```python
+from itertools import product
+def solution(clothes):
+    '''
+    스파이가 가진 의상들이 담긴 2차원 배열 clothes가 주어질 때
+    서로 다른 옷의 조합의 수를 return
+    '''
+    clothes_dict = dict()
+    for cloth in clothes:
+        if cloth[1] in list(clothes_dict.keys()):
+            temp = list(clothes_dict[cloth[1]])
+            temp.append(cloth[0])
+            clothes_dict[cloth[1]] = temp
+        else:
+            clothes_dict[cloth[1]] = [cloth[0]]
+    answer = 1
+    print(clothes_dict)
+    for items in list(clothes_dict.keys()):
+        answer*= (len(clothes_dict[items])+1)
+    answer -= 1 # 하나도 안 입었을 때
+    return answer
 ```
