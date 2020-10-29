@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Programmers] SQL 알고리즘 [5] JOIN  -  없어진 기록 찾기, 있었는데요 없었습니다, 오랜 기간 보호한 동물, 보호소에서 중성화한 동물  "
+title:  "[Programmers] SQL 알고리즘 [4] JOIN  -  없어진 기록 찾기, 있었는데요 없었습니다, 오랜 기간 보호한 동물, 보호소에서 중성화한 동물  "
 date:   2020-10-30
 desc: " "
 keywords: "python, Programmers, algorithm"

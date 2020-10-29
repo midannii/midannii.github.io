@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Programmers] SQL 알고리즘 [4] string & date  - 이름에 el이 들어가는 동물 찾기, 오랜 기간 보호한 동물, DATETIME에서 DATE로 형 변환   "
+title:  "[Programmers] SQL 알고리즘 [5] string & date  - 이름에 el이 들어가는 동물 찾기, 오랜 기간 보호한 동물, DATETIME에서 DATE로 형 변환   "
 date:   2020-10-30
 desc: " "
 keywords: "python, Programmers, algorithm"
