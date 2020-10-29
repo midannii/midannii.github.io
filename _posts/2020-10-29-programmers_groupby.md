@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Programmers] SQL 알고리즘 [3] Group by & is null  -  고양이와 개는 몇마리 있을까, 입양시각 구하기, 이름이 있는/없는 동물의 id  "
-date:   2020-10-29
+date:   2020-10-30
 desc: " "
 keywords: "python, Programmers, algorithm"
 categories: [Database]
