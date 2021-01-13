@@ -137,3 +137,136 @@ print(t.sum(dim=0)) # tensor([4., 6.])
 print(t.sum(dim=1)) # tensor([3., 7.])
 print(t.sum(dim=-1)) # tensor([3., 7.])
 ```
+
+
+### view
+
+```python
+t = np.array([[[0, 1, 2],
+               [3, 4, 5]],
+
+              [[6, 7, 8],
+               [9, 10, 11]]])
+ft = torch.FloatTensor(t)
+print(ft.shape) # torch.Size([2, 2, 3])
+
+print(ft.view([-1, 3]))
+# tensor([[ 0.,  1.,  2.],
+#        [ 3.,  4.,  5.],
+#        [ 6.,  7.,  8.],
+#        [ 9., 10., 11.]])
+print(ft.view([-1, 3]).shape) # print(ft.view([-1, 3]).shape)
+```
+
+
+### Squeeze
+
+```python
+ft = torch.FloatTensor([[0], [1], [2]])
+print(ft)
+#tensor([[0.],
+#        [1.],
+#        [2.]])
+print(ft.shape)
+# torch.Size([3, 1])
+
+print(ft.squeeze()) # tensor([0., 1., 2.])
+print(ft.squeeze().shape) # torch.Size([3])
+```
+
+### unsqueeze
+
+```python
+ft = torch.Tensor([0, 1, 2])
+print(ft.shape) #torch.Size([3])
+
+print(ft.unsqueeze(0)) # tensor([[0., 1., 2.]])
+print(ft.unsqueeze(0).shape) # torch.Size([1, 3])
+
+print(ft.unsqueeze(1))
+# tensor([[0.],
+#        [1.],
+#        [2.]])
+print(ft.unsqueeze(1).shape) # torch.Size([3, 1])
+```
+
+### Scatter (for one-hot encoding)
+
+```python
+lt = torch.LongTensor([[0], [1], [2], [0]])
+print(lt)
+#tensor([[0],
+#        [1],
+#        [2],
+#        [0]])
+
+one_hot = torch.zeros(4, 3) # batch_size = 4, classes = 3
+one_hot.scatter_(1, lt, 1)
+print(one_hot)
+#tensor([[1., 0., 0.],
+#        [0., 1., 0.],
+#        [0., 0., 1.],
+#        [1., 0., 0.]])
+```
+
+
+### Concatenation
+```python
+x = torch.FloatTensor([[1, 2], [3, 4]])
+y = torch.FloatTensor([[5, 6], [7, 8]])
+
+print(torch.cat([x, y], dim=0))
+#tensor([[1., 2.],
+#        [3., 4.],
+#        [5., 6.],
+#        [7., 8.]])
+
+print(torch.cat([x, y], dim=1))
+# tensor([[1., 2., 5., 6.],
+#        [3., 4., 7., 8.]])
+```
+
+### Stacking
+
+```python
+x = torch.FloatTensor([1, 4])
+y = torch.FloatTensor([2, 5])
+z = torch.FloatTensor([3, 6])
+
+print(torch.stack([x, y, z]))
+#tensor([[1., 4.],
+#        [2., 5.],
+#        [3., 6.]])
+
+print(torch.stack([x, y, z], dim=1))
+tensor([[1., 2., 3.],
+        [4., 5., 6.]])
+```
+
+### In-place Operation
+
+```python
+x = torch.FloatTensor([[1, 2], [3, 4]])
+
+print(x.mul(2.))
+# tensor([[2., 4.],
+#        [6., 8.]])
+print(x)
+# tensor([[1., 2.],
+#        [3., 4.]])
+```
+
+### Zip
+```python
+for x, y in zip([1, 2, 3], [4, 5, 6]):
+    print(x, y)
+#1 4
+#2 5
+#3 6
+
+for x, y, z in zip([1, 2, 3], [4, 5, 6], [7, 8, 9]):
+    print(x, y, z)
+#1 4 7
+#2 5 8
+#3 6 9
+```
