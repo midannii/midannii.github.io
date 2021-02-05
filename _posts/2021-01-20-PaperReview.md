@@ -13,7 +13,7 @@ icon: icon-html
 
 처음으로 정리해볼 [논문](https://www.jmir.org/2020/10/e22635?utm_source=ground.news&utm_medium=referral)은,
 
-### Natural Language Processing Reveals Vulnerable Mental Health Support Groups and Heightened Health Anxiety on Reddit During COVID-19: Observational Study
+# Natural Language Processing Reveals Vulnerable Mental Health Support Groups and Heightened Health Anxiety on Reddit During COVID-19: Observational Study
 
 
 이다. LIWC, LDA, TF-IDF, sentimental analysis 등 다양한 언어학적 특성을 도출하여 covid19가 사회적으로 미친 영향을 심리적 관점에서 바라보았다.
@@ -103,28 +103,28 @@ clustering 과 같은 `unsupervised ML` 을 진행하였다.
 
 
 
-![fig](static/assets/img/blog/papers/fig1.jpeg)
+![fig](https://github.com/midannii/midannii.github.io/blob/master/static/assets/img/blog/papers/fig1.jpeg)
 
 
 우선 fig 1은 covid case와 reddit post의 관계를 timeline landmark한 그림이다. `reddit_descriptive.ipynb`에 코드가 있다.
 
-![fig](static/assets/img/blog/papers/fig2.jpeg)
+![fig](https://github.com/midannii/midannii.github.io/blob/master/static/assets/img/blog/papers/fig2.jpeg)
 
 fig 2는 post-pandemic 전과 후의 linguistic feature 변화를 나타낸 그림이다. 부정적인 변화가 큰 subreddit도 B에 따로 정리해 두었다. `reddit_descriptive.ipynb`에 코드가 있다.
 
-![fig](static/assets/img/blog/papers/fig3.jpeg)
+![fig](https://github.com/midannii/midannii.github.io/blob/master/static/assets/img/blog/papers/fig3.jpeg)
 
 fig3은 pre-pendemic과 post-pendemic의 unsupervised clustering을 비교하여 UMAP으로 나타낸 것이다. `Unsupervised_Clustering_Pipeline.ipynb`에 코드가 있다.
 
-![fig](static/assets/img/blog/papers/fig4.jpeg)
+![fig](https://github.com/midannii/midannii.github.io/blob/master/static/assets/img/blog/papers/fig4.jpeg)
 
 fig4는 LDA를 이용하여 topic distribution의 shift 변화를 나타낸 것이다. `reddit_lda_pipeline.ipynb`에 코드가 있다.
 
-![fig](static/assets/img/blog/papers/fig5.jpeg)
+![fig](https://github.com/midannii/midannii.github.io/blob/master/static/assets/img/blog/papers/fig5.jpeg)
 
 fig5는 `reddit_lda_pipeline.ipynb`, `Unsupervised_Clustering_Pipeline.ipynb`에 코드가 있다.
 
-![fig](static/assets/img/blog/papers/fig6.jpeg)
+![fig](https://github.com/midannii/midannii.github.io/blob/master/static/assets/img/blog/papers/fig6.jpeg)
 
 fig6은 차원축소를 통해 similarity를 관찰했다. healthanxiety가 다른 정신질환 subreddit과 비슷해졌음을 알 수 있다. `reddit_cluster.ipynb`에 코드가 있다.
 
