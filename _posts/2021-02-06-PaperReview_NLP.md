@@ -211,27 +211,102 @@ index만 보더라도, 전반적인 `text classification`을 잘 설명해줄 �
 
   2. Term Frequency - Inverse Document Frequency (`TF-IDF`)
 
-    -  단어의 빈도(term frequency)와 역 문서 빈도(inverse document frequency)를 사용하여, DTM 내의 각 단어들마다 중요한 정도를 가중치로 줌
+    -  단어의 빈도(term frequency)와 역 문서 빈도(inverse document frequency)를 사용하여, DTM(Document-Term Matrix) 내의 각 단어들마다 중요한 정도를 가중치로 줌
 
     -  DTM을 만든 후, TF-IDF 가중치를 부여함
 
 
       ![fig](https://blog.kakaocdn.net/dn/b73SmS/btqBtNyPGpT/G6RJlEJpc96OEMz18UnFr1/img.jpg)
 
+      - 분모에 1을 더하는 이유: 특정 단어가 전체 문서에서 아예 등장하지 않으면 분모가 0이 되는 상황을 막기 위해
+
+      - `log`를 취하는 이유
+
+        * `n/df(t)`를 바로 사용한다면 총 문서수 n이 커질수록 IDF가 기하급수적으로 커지게 됨
+
+        * 자주 쓰이는 단어들(불용어 등)은 자주 쓰이지 않는 단어들보다 최소 수십 배 ~ 수백배 자주 등장한다. 로그를 씌우면 가중치 격차를 를 줄일 수 있다.
+
     - BoW의 한계는 극복했지만, 문맥적으로 유사한 의미를 갖는 단어는 감지하지 못함
 
-    
+
 
 4. word embedding
 
+  Word embedding은 각 word 또는 phrase 가 N 차원 벡터에 mapping 되는 것이다.
+
+  일반적으로는 embedding vector 를 처음부터 만드는 것 보다, Pre-trained Word Embedding을 갖고 와서 사용하거나, 갖고 온 것에 추가 학습을 하는 방식으로 사용한다.
+
   1. Word2Vec
+
+  - 단어 간 유사도를 반영할 수 있도록 단어의 의미를 벡터화 할 수 있는 방법
+
+      - 기존 one-hot vector가 `sparse representation`였던 것에 비해, Word2Vec은 `distributed representation`을 이용하여 비슷한 위치에서 등장하는 단어들은 비슷한 의미를 가지게끔 단어의 유사도를 벡터화한다.
+
+  - 종류
+
+      - Skip-grams
+
+      ![fig](https://wikidocs.net/images/page/22660/word2vec_renew_6.PNG)
+
+
+      ![fig](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdPRcWU%2FbtqEt5nV6nt%2FgdkM3YokcxtAQZVq5unMp1%2Fimg.png)
+
+
+          - 중심 단어에서 주변 단어를 예측
+
+          - 전반적으로 Skip-gram이 CBOW보다 성능이 좋다고 알려져 있음
+
+      - CBOW (Continuous Bag of Words)
+
+      ![fig](https://wikidocs.net/images/page/22660/word2vec_renew_3.PNG)
+
+
+      ![fig](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F1DEDh%2FbtqEtNnvKai%2F9yA8WS93IsPs85WvBjrIak%2Fimg.png)
+
+          - 주변 단어를 통해 중심 단어를 예측
+
+          - 학습시킬 문장의 모든 단어들을 one-hot encoding방식으로 벡터화한 후, 하나의 center 단어에 대해 2m개의 단어 벡터를 `Input`으로 하여, 주변의 단어들이 주어졌을 때 다음의 center 단어의 조건부 확률을 최대화 하도록 학습한다.
+
+              - 이때 input에서의 embedded word vector 2m개의 평균을 계산한 벡터가 `Hidden layer`가 된다.
+
+          - unordered collection of words을 벡터로 표현하는 데 사용
+
+      - Continuous Skip-Gram
+
+          - 문맥을 기반으로 현재 단어를 예측하지 않고, 동일한 문장에서 다른 단어를 기반으로 단어의 classification를 최대화하도록 한다.
+
+          - CBOW model과 continuous Skip-gram model은, ML 알고리즘을 위해 문장의 구문 및 의미 정보를 유지하는 데 사용한다.
 
 
   2. Global Vectors for Word Representation (`GloVe`)
 
 
+  ![fig](https://miro.medium.com/max/2456/1*gcC7b_v7OKWutYN1NAHyMQ.png)
+
+  - word2vec과 비슷하지만, Word2Vec이 사용자가 지정한 윈도우(주변 단어 몇개만 볼지) 내에서만 학습/분석이 이뤄지기 때문에, 말뭉치 전체의 공기정보(`co-occurrence`)는 반영되기 어렵다는 단점을 보완하고자 하였다.
+
+  - 임베딩된 inner product가 코사인 유사도가 되도록 하며, 말뭉치 전체의 통계 정보를 좀 더 잘 반영해보게끔 하였다.
+
+  - 또한 100, 200, 300 차원으로 사전 훈련된 다른 단어 vectorization를 제공한다 (Twitter내용을 포함하는 거대한 말뭉치)
+
+
+
+
   3. FastText
 
+
+  - 우선 모르는 단어, 즉 `Out Of Vocabulary`에 대해 각 단어를 글자들의 n-gram으로 나타낸다.
+
+      - e.g. apple, n=3 -> <ap, app, ppl, ple, le>, <apple>
+
+      - 이떄 n은 설정가능하지만, 기본적으로는 3,6이다.
+
+
+  - 이후 학습을 통해 dataset의 모든 단어의 각 n-gram에 대해서 word embedding 한다. 이를 통해 내부 단어(subword)를 통해 모르는 단어(OOV)에 대해서도 다른 단어와의 유사도를 계산할 수 있다.
+
+  - 등장 빈도 수가 적은 단어라 하더라도, n-gram으로 임베딩을 하는 특성상 참고할 수 있는 경우의 수가 많아지므로 Word2Vec보다 정확하다
+
+    - 오타 등 noise가 섞인 단어는 당연히 등장 빈도수가 매우 적으므로 일종의 희귀 단어가 된다. Word2Vec에서는 이러한 단어는 임베딩이 제대로 되지 않지만 FastText는 이에 대해서도 나쁘지 않은 성능을 보인다
 
   4. Contextualized Word Embedding
 
@@ -250,3 +325,26 @@ index만 보더라도, 전반적인 `text classification`을 잘 설명해줄 �
   -  이건 처음 접해보는 내용이라 [이 논문](https://arxiv.org/abs/1802.05365)을 따로 읽어야 겠다
 
 <br>
+
+
+## 추가 Reference
+
+- TF-IDF
+
+    - https://blog.kakaocdn.net/dn/b73SmS/btqBtNyPGpT/G6RJlEJpc96OEMz18UnFr1/img.jpg
+
+
+- Word2vec
+
+    - https://simonezz.tistory.com/35
+
+    - https://wikidocs.net/22660
+
+- Glove
+
+    - https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/04/09/glove/
+
+
+- FastText
+
+    - https://omicro03.medium.com/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC-nlp-15%EC%9D%BC%EC%B0%A8-fasttext-2b1aca6b3b56
