@@ -307,7 +307,13 @@ index만 보더라도, 전반적인 `text classification`을 잘 설명해줄 �
 
 4. Contextualized Word Embedding
 
-- 같은 단어라도 문맥에 따라 다른 vector를 만들어낸다. 순방향 모델과 역방향 모델에서의 값을 합쳐 사용
+- ELMO(Embeddings from Language Models)를 설명하는 내용이다.
+
+  - ELMO는 방대한 text corpus로부터 pretrained된 Our word vector이며, deep bidirectional language model(`biLM`)로부터 학습된다.
+
+![fig](https://www.researchgate.net/publication/339479450/figure/fig1/AS:862448261275651@1582635097740/The-architecture-of-embeddings-from-language-models-ELMO-based-BiLSTM-CRF-model.png)
+
+- ELMO를 통해 같은 단어라도 문맥에 따라 다른 vector를 만들어낸다. 순방향 모델과 역방향 모델에서의 값을 합쳐 사용
 
   - 순방향 모델
 
@@ -317,7 +323,6 @@ index만 보더라도, 전반적인 `text classification`을 잘 설명해줄 �
 
 ![fig2](https://miro.medium.com/max/496/1*XaWi2NSF6GLNgWVygZSxPw.png)
 
--  이건 처음 접해보는 내용이라 [이 논문](https://arxiv.org/abs/1802.05365)을 따로 읽어야 겠다
 
 <br>
 
@@ -343,3 +348,9 @@ index만 보더라도, 전반적인 `text classification`을 잘 설명해줄 �
 - FastText
 
     - https://omicro03.medium.com/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC-nlp-15%EC%9D%BC%EC%B0%A8-fasttext-2b1aca6b3b56
+
+- ELMO
+
+    - https://wikidocs.net/33930
+
+    - https://medium.com/@eyfydsyd97/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-deep-contextualized-word-representations-3e227f57fa0d
