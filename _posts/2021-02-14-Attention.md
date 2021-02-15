@@ -120,9 +120,13 @@ output은 각 value의 weighted sum이다.
 
 
 
-
 ## Why Self-Attention ?
 
+1. Layer 당 총 계산 복합성 (간단함)
+
+2. parallelize할 수 있는 계산의 양
+
+3. network 내에서 long-range dependency간의 길이 (짧음)
 
 
 ## Training
@@ -140,6 +144,28 @@ Residual Dropout 을 0.1로 이용하였고, 아래와 같은 성능을 도출�
 
 
 <br>
+
+
+이 링크 (https://wikidocs.net/31379)에서 알기 쉽게 설명해주셨길래, 참고해서 끄적끄적 정리해봤다!
+
+
+![fig](https://github.com/midannii/midannii.github.io/blob/master/static/assets/img/blog/papers/transformer.jpeg)
+
+
+![fig](https://github.com/midannii/midannii.github.io/blob/master/static/assets/img/blog/papers/transformer2.jpeg)
+
+
+```
+## Workflow
+
+1. Q, K, V 벡터 구하기
+2. Scaled Dot-Product Attention (행렬 연산으로 구현됨 )
+- 내부에 Padding Mask : Pad token을 연산에서 제외시킴
+3. Multi-head Attention
+...
+
+<br>
+
 
 # Reference
 
