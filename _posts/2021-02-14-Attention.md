@@ -89,10 +89,35 @@ decoder에서도 N = 6인 layer를 갖지만, 각 layer는 3개의 sub-layer를 
 
 decoder에서는 순차적인 결과를 만들어내기 위해 `masking`한다.
 
-`masking`이란, self-attention을 변형함으로서, 특정 지점에 대한 prediction을 해당 시점에서 이미 알고 있는 output들에만 의존을 하도록 하는 것이다. 
+`masking`이란, self-attention을 변형함으로서, 특정 지점에 대한 prediction을 해당 시점에서 이미 알고 있는 output들에만 의존을 하도록 하는 것이다.
 
 
-### Attention
+## Attention
+
+Attention function은 query와 key-value들을 output에 mapping 해준다.
+
+음 attention이라는 이름답게 특정 정보에 좀 더 주의를 기울이는(attention) 것입니다.
+
+이 논문에서는 아래와 같은 `Scaled Dot-Product Attention`,  `Multi-head attention`를 이용한다.
+
+(수식이 너무 많아, [다른 블로그의 정리글](https://pozalabs.github.io/transformer/)들을 참고했다. )
+
+
+### Scaled Dot-Product Attention
+
+![fig](https://pozalabs.github.io/assets/images/sdpa.PNG)
+
+모든 query와 key에 대한 dot-product를 계산하고 각각을 √dk 로 나누어준다. (scaling)
+
+이후 여기에 softmax를 적용해 value들에 대한 weights를 얻어낸다.
+
+output은 각 value의 weighted sum이다.
+
+
+### Multi-head attention
+
+![fig](https://pozalabs.github.io/assets/images/mha.PNG)
+
 
 
 
