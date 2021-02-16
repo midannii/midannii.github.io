@@ -118,7 +118,7 @@ output은 각 value의 weighted sum이다.
 
 ![fig](https://pozalabs.github.io/assets/images/mha.PNG)
 
-
+![fig](https://image.slidesharecdn.com/attentionisallyouneed-180911075353/95/attention-is-all-you-need-11-638.jpg?cb=1536652582)
 
 ## Why Self-Attention ?
 
@@ -159,7 +159,7 @@ Residual Dropout 을 0.1로 이용하였고, 아래와 같은 성능을 도출�
 ## Workflow
 
 1. Q, K, V 벡터 구하기
-2. Scaled Dot-Product Attention (행렬 연산으로 구현됨 )
+2. Scaled Dot-Product Attention (행렬 연산으로 구현)
 - 내부에 Padding Mask : Pad token을 연산에서 제외시킴
 3. Multi-head Attention
 ...
