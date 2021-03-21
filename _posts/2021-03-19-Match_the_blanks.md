@@ -241,4 +241,17 @@ BERT의 training setup과 비슷하게 구성함
 
     - 이때, bias를 방지하기 위해 entity를 포함하는 relation statement를 random sampling & 개수 제한
 
+    - (D ̃)를 줄이기 위해,  `noise-contrasitive estimation`  을 사용함
+
+        → 같은 entity를 가지고 있는 모든 relation statement의 positive pair를 고려하여, 같은 entity쌍을 가지지 않는 모든 relation statement를 합함
+
+        - 그 대신, 전체 relation statement에서 random sampling한 relation statement이나 하나의 entity만 공통으로 가지는 **relation statement를**   negative sampling함
+        - `hard negative` set를 포함함
+            - We include the second set ‘hard’ negatives to account for the fact that most randomly sampled relation statement pairs are very unlikely to be even remotely topically related, and we would like to ensure that the training procedure sees pairs of relation statements that refer to similar, but different, relations.
+
+        → α = 0.7으로 entity를 [BLANK] symbol로 대체
+
+    > 6. Conclusion & Future Work
+
+    우리꺼 성능 좋다!!!! 🥳🥳🥳🥳
 <br>
