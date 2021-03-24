@@ -21,7 +21,7 @@ icon: icon-html
 
 <br>
 
-> 1. Introduction
+# 1. Introduction
 
 RE에서의 대표적인 3가지
 
@@ -62,7 +62,7 @@ RE에서의 대표적인 3가지
     - outperfom함 !
 - maching blank를 학습시키고 labeled data로 tuning해도 outperform함 !
 
-> 2. Overview
+# 2. Overview
 
 **Task Definition**
 
@@ -89,7 +89,7 @@ RE에서의 대표적인 3가지
 
 2.  fθ가, entity linked text의 form으로 distant supervision으로부터 학습될 수 있음을 보임(in 4)
 
-> 3. Architectures for Relation Learning
+# 3. Architectures for Relation Learning
 
 text로부터 바로 relation representation을 만드는 모델을 개발하는 것이 첫 목표
 
@@ -187,7 +187,7 @@ text로부터 바로 relation representation을 만드는 모델을 개발하는
 - we use the dot product between relation representation of the query statement and each of the candidate statements as a similarity score.
 - we also apply a cross entropy loss of the softmax of similarity scores with respect to the true class.
 
-> 4. Learning by Matching the Blanks
+# 4. Learning by Matching the Blanks
 
 predefined ontology나 relation-labeled training data 없이 fθ를 학습하는 방법을 소개할 예정
 
@@ -251,7 +251,7 @@ BERT의 training setup과 비슷하게 구성함
 
         → α = 0.7으로 entity를 [BLANK] symbol로 대체
 
-    > 6. Conclusion & Future Work
+# 6. Conclusion & Future Work
 
     우리꺼 성능 좋다!!!! 🥳🥳🥳🥳
 <br>
