@@ -43,7 +43,7 @@ RE에서의 대표적인 3가지
 
 #이전의 supervised RE보다 성능 좋음
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bdb8083f-1e33-4ebd-8e33-cd491e9d9631/_2021-03-19__2.49.03.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bdb8083f-1e33-4ebd-8e33-cd491e9d9631/_2021-03-19__2.49.03.png)
+![fig1](https://miro.medium.com/max/1732/1*jHlbU40LukJrHhhGIpuKxg.png)
 
 (1) training dataset
 
@@ -75,9 +75,9 @@ RE에서의 대표적인 3가지
 
 - 목표: 아래 함수(고정된 길이의 벡터 hr에 relation statement를 mapping해줌)를 학습
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b77710ce-df84-4e13-a386-5e4fc92490ab/_2021-03-19__3.14.05.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b77710ce-df84-4e13-a386-5e4fc92490ab/_2021-03-19__3.14.05.png)
+    ![fig](static/assets/img/blog/papers/MTB_1.png)
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/26a2b6c7-4122-45d0-8669-86196590d001/_2021-03-19__3.17.17.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/26a2b6c7-4122-45d0-8669-86196590d001/_2021-03-19__3.17.17.png)
+    ![fig](static/assets/img/blog/papers/MTB_2.png)
 
     - 엔티티(s1, s2) 의 relation(x)
 
@@ -114,7 +114,7 @@ text로부터 바로 relation representation을 만드는 모델을 개발하는
     - how do we represent entities of interest in the input to BERT
     - how do we extract a fixed length representation of a relation from BERT’s output
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a020643f-9b42-4963-afa1-e46be5ea22ee/_2021-03-19__4.19.28.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a020643f-9b42-4963-afa1-e46be5ea22ee/_2021-03-19__4.19.28.png)
+![fig](https://i.imgur.com/IzqJyKq.png)
 
 - BERT encoder로 focus span(s1,s2)의 정보를 가져오는 option (3가지)
     - standard input (reference)
@@ -166,7 +166,7 @@ text로부터 바로 relation representation을 만드는 모델을 개발하는
 
 모든 task에서, `ENTITY MARKERS input representation`과  `ENTITY START output representation` 이 제일 성능이 좋음
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8da6b7af-b6dc-412d-8169-03bc13c82c76/_2021-03-19__5.00.36.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8da6b7af-b6dc-412d-8169-03bc13c82c76/_2021-03-19__5.00.36.png)
+![fig](https://bpben.github.io/assets/paper/matchingblanks_1.png)
 
 - model의 input & output architecture를 define하기 위해, 학습에 쓰이는 training loss를 fix 해야함
 - 모든 model에서, Transformer network에서의 output representation은,
@@ -203,7 +203,7 @@ predefined ontology나 relation-labeled training data 없이 fθ를 학습하는
 
 - binary classifier
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4d20b8f4-79ce-4737-b9c5-3b4fe457b8b9/_2021-03-19__5.58.53.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4d20b8f4-79ce-4737-b9c5-3b4fe457b8b9/_2021-03-19__5.58.53.png)
+    ![binaryClassifier](static/assets/img/blog/papers/MTB_3.png)
 
     - E ; predefined set of entities
     - D = [(r0,e01,e02)...(rN,eN1 ,eN2 )] be a corpus of relation statements that have been labeled with two entities ei1 ∈ E and ei2 ∈ E
@@ -212,7 +212,7 @@ predefined ontology나 relation-labeled training data 없이 fθ를 학습하는
 
 - loss
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f5448efa-9c98-44f3-ae12-32046f916cab/_2021-03-19__5.59.10.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f5448efa-9c98-44f3-ae12-32046f916cab/_2021-03-19__5.59.10.png)
+    ![loss](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcN2Z9ou9wNUakeAjhRbz1QAM6ht5-8hIQFA&usqp=CAU)
 
     - δe,e′ is the Kronecker delta that takes the value 1 iff e = e′, and 0 otherwise.
     - 이 loss는, entity linking system에 의해 minized될 수 있다.
@@ -221,7 +221,7 @@ predefined ontology나 relation-labeled training data 없이 fθ를 학습하는
 
 - modified corpus D ̃:
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2290916a-458f-4d81-bfb6-701e2f06cc0b/_2021-03-19__6.02.16.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2290916a-458f-4d81-bfb6-701e2f06cc0b/_2021-03-19__6.02.16.png)
+    ![D](static/assets/img/blog/papers/MTB_D.png)
 
     - 단순히 linking system만 재학습하는 것을 피하기 위해 도입함
     - 이 D에는, 한두개의 entity가 [BLANK] symbol로 대체된 ri = (x ̃i, si1, si2)가 있다.
