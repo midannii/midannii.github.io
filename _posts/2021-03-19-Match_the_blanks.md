@@ -253,5 +253,6 @@ BERT의 training setup과 비슷하게 구성함
 
 # 6. Conclusion & Future Work
 
-    우리꺼 성능 좋다!!!! 🥳🥳🥳🥳
+우리꺼 성능 좋다!!!! 🥳🥳🥳🥳
+
 <br>
