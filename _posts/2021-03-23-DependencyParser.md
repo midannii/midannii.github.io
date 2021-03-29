@@ -20,6 +20,17 @@ icon: icon-html
 
 <br>
 
+`Dependency parsing`은 크게 두가지로 나뉘는데,
+
+문장이 가질 수 있는 모든 의존트리(dependencytree)중에서 가장 높은 점수의 의존트리를 선택하는 방법인 `non-deterministic dependency parsing`,
+
+
+greedy algorithm에 기반한 방법으로 locally training model을 사용하는 `deterministic dependency parsing`이 있다.
+
+후자의 경우 더 많은 문맥자질을 사용할 수 있고, 근거리 의존관계를 찾는데 강하며, 속도가 빠른 장점을 가지고 있다
+
+<br>
+
 
 한국어의 경우, `Sejong Treebank`를 바탕으로 하는 선행 연구가 있었다.
 
