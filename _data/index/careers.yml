@@ -30,3 +30,18 @@
     i18n: company_b_job
   icon: fa-plus-square
   present: true
+
+- name:
+    detail: KU NLP & AI lab
+    i18n: company_c
+  desc:
+    detail: I work at "http://blp.korea.ac.kr/"
+    i18n: company_c_desc
+  date:
+    detail: Mar. 2021
+    i18n: company_c_date
+  job:
+    detail: Intern
+    i18n: company_c_job
+  icon: fa-plus-square
+  present: true
