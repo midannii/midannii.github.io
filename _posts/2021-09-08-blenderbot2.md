@@ -53,7 +53,7 @@ We study the performance of two long-context conversational architectures on thi
 
 - " individual chat session is long"  == 중간에 몇시간 ~ 며칠 paused 됨
 
-      - 우리는 이러한 multi-session long conversation setup을 고려함
+  - 우리는 이러한 multi-session long conversation setup을 고려함
 
 
 - Session 1에서는 기존 PERSONACHAT인 짧은 대화 내용을 바탕으로 처음 만난 두 사람의 간략한 정보만 서로 나누는 대화 태스크로 진행이 됩니다.
@@ -68,7 +68,7 @@ We study the performance of two long-context conversational architectures on thi
 
 - CrowdWorkers + 1155명의 Personas 사용; 첫번째 대화 이후 시간이 흐른 뒤 대화 하도록 .. or 그런 척
 
-      - 4000 episodes with 3 sessions, and 1001 episodes with 4 sessions.
+  - 4000 episodes with 3 sessions, and 1001 episodes with 4 sessions.
 
 
 
@@ -91,7 +91,7 @@ We study the performance of two long-context conversational architectures on thi
 
 - RAG(Retrieval-Augmented Generation)
 
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d8a8f8b5-b432-45c0-910a-c48b0316f7b6/Untitled.png)
+    ![Untitled](https://miro.medium.com/max/933/1*0pJxb3FpkzcFBpIRPfbTqw.png)
 
     - RAG utilizes Neural-retriever-in-loop which is itself a Transformer
     - 검색할 문서는 가장 가까운 FAISS index에 저장
@@ -100,7 +100,7 @@ We study the performance of two long-context conversational architectures on thi
     - end-to-end train
 - FiD(Fusion in Decoder)
 
-    ![스크린샷 2021-08-15 오전 12.20.19.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cfb33b1b-2218-43c7-9cc1-2f66dc2fb1a3/스크린샷_2021-08-15_오전_12.20.19.png)
+    ![image.png](https://i.imgur.com/1ScrHuN.png)
 
     - FiD의 답변 생성 방식; 쿼리와의 관련성이 높은 순서대로 N개 입력을 만들고 각각 인코더에 태워서 벡터로 인코딩합니다. 이 𝑁 개의 인코딩 벡터들을 합쳐(concatenate) 디코더에 넣고 답변을 생성
 - FiD-RAG
