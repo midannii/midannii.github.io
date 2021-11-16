@@ -42,9 +42,9 @@ icon: icon-html
 
 - 2가지 방법으로 PTLM을 evaluate
 
-    (1) a zero-shot setting; meaning no probes from our dataset were used to fine-tune the models before evaluation;
+    (1) `zero-shot` setting; probe를 fine-tuning단에서 사용하지 않음
 
-    (2) a distant supervision setting; where models were fine-tuned on examples from related commonsense reasoning datasets before being evaluated on ours.
+    (2) `distant supervision` setting; 여러개의 commonsense reasoning 데이터셋에 대해 fine-tuning이 진행됨
 
     → 두번쨰 방법이 성능 향상에 도움을 주긴 하지만, 여전히 PTLM은 human보다 떨어짐
 
@@ -101,9 +101,10 @@ fine-tuning으로 성능을 향상시키기 위해, generic commonsense statemen
 
 ### 3.1. Experiment Set-up
 
-- zero-shot inference
+- `zero-shot` inference
+    - 아무런 modification없이 PTLM을 probe
     - pre-train masked-word-prediction head로 BERT, RoBERTa 사용
-- additional supervision via fine-tuning
+- `distant supervision` via fine-tuning
     - 2.3에서 수집한 additional supervision dataset를 사용
     - 각 문장의 number word를 masking
 
@@ -127,12 +128,17 @@ fine-tuning으로 성능을 향상시키기 위해, generic commonsense statemen
 
 ## 4. Case Studies
 
-- object bias
-    - RoBERTa의 pre-train strategy가 bias를 줄여줌
-- attention distribution
-    - root word "has"가 처음 몇 layer에서 attention높고, number word인 "two"는 마지막 layer에서 attention이 높았음
+zero-shot, additional supervision에서 PTLM의 numerical commonsense knowledge를 평가
 
-    → 즉, sub/obj와 number word의 relation을 BERT, RoBERTa에서 많이 잃어버림
+- object bias
+    - masked word 근처의 '특정 단어'가 영향을 주는지를 확인
+    - RoBERTa의 pre-train strategy가 bias를 줄여줌 (more robust)
+- attention distribution
+    - 예시 문장: Birds have two legs
+        - root word "has"가 처음 몇 layer에서 attention높고, number word인 "two"는 마지막 layer에서 attention이 높았음
+        - 나머지 birds, legs의 attention weight은 낮음
+
+            → 즉, sub/obj와 number word의 relation을 BERT, RoBERTa에서 많이 잃어버림
 
 
 ## 5. Open-Domain ‘How-Many’ Questions
@@ -145,5 +151,3 @@ fine-tuning으로 성능을 향상시키기 위해, generic commonsense statemen
 - Probing Commonsense Knowledge
 - Numerical Commonsense Knowledge
 - Encoding Numerics for Computation
-
-## 7. Conclusion
