@@ -1,5 +1,16 @@
-> 요약
->
+---
+layout: post
+title:  "[NLP] DROP : A reading comprehension Benchmark Requiring  Discrete Reasoning Over the content of Paragraphs  "
+date:   2021-11-16
+desc: " "
+keywords: "DL, ML"
+categories: [Deeplearning]
+tags: [DL, ML]
+icon: icon-html
+---
+
+## *  요약
+
 
 - PTML의 neural knowledge base는 numerical commonsense knowledge에 해당하지 않음  (e.g., a bird usually has two legs)
 - 본 논문에서, PTLM이 numerical commonsense knowledge를 유도할 수 있는지를 연구함
