@@ -4,30 +4,32 @@ title: About
 permalink: /about/
 ---
 
-## Theme Monos
-> Simple and lightweight theme for Jekyll
 
-### Features
-- Responsive.
-- Syntax Highlight
-- Most optimized theme for tech blog.
-- Lightweight with minimum stylesheet.
-- Easy to customize.
-- Offers category menu.
+## Midan Shim
 
-### _config.yml
-> Code block will look like this.
-```yml
-highlighter-theme: monokai //you can change your syntax color scheme.
-date_format: "%Y-%M-%D" //and date format.
-```
+![fig](statics/midan_.png)
 
-### Screenshots
-#### Page
-![alt text](/public/img/screenshot-1.png)
-#### Articles
-![alt text](/public/img/screenshot-2.png)
-#### Page - Mobile
-![alt text](/public/img/screenshot-m1.png)
-#### Page - Articles
-![alt text](/public/img/screenshot-m2.png)
+Hi! I'm on my master's course at YonSei University.
+
+Welcome to my blog :)
+
+If you want to contact me, plz mail to `hihello0426@gmail.com` or `midans26@yonsei.ac.kr`! 
+
+
+### Research Interest
+
+- Natural Language Processing
+
+- Knowledge Graph
+
+- Data Analysis
+
+
+
+### More About Me
+
+- [My Github](https://github.com/midannii)
+
+- [CV](https://mydann.notion.site/Midan-Shim-115ea6cdbf7c46e096a79f04c4baa29d)
+
+- [Google Scholar](https://scholar.google.co.kr/citations?user=midanshim)
