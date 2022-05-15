@@ -1,0 +1,16 @@
+current directory: /Users/midan/midannii.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/Users/midan/.rbenv/versions/2.6.4/bin/ruby -I /Users/midan/.rbenv/versions/2.6.4/lib/ruby/site_ruby/2.6.0 -r ./siteconf20220515-23403-ggvr6p.rb extconf.rb
+creating Makefile
+
+current directory: /Users/midan/midannii.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" clean
+
+current directory: /Users/midan/midannii.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR="
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.bundle
+
+current directory: /Users/midan/midannii.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 fastfilereaderext.bundle ./.gem.20220515-23403-1n3t3ry
