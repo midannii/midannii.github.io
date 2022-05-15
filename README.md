@@ -7,13 +7,13 @@ permalink: /about/
 
 ## Midan Shim
 
-![fig](statics/midan_.png)
+![fig](statics/midan_.png){ width: 200px; }
 
 Hi! I'm on my master's course at YonSei University.
 
 Welcome to my blog :)
 
-If you want to contact me, plz mail to `hihello0426@gmail.com` or `midans26@yonsei.ac.kr`! 
+If you want to contact me, plz mail to `hihello0426@gmail.com` or `midans26@yonsei.ac.kr`!
 
 
 ### Research Interest
