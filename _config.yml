@@ -26,7 +26,7 @@ title: Chirpy                          # the main title
 tagline: M.S. in Yonsei Univ   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
+  Blog for midannii
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://midannii.github.io'
@@ -41,7 +41,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Midan Shim
-  email: example@doamin.com             # change to your email address
+  email: hihello0426@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link    # change to your twitter homepage
     - https://github.com/midannii    # change to your github homepage
@@ -73,7 +73,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode:   # [light|dark]
+theme_mode: dark  # [light|dark]
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -83,7 +83,7 @@ theme_mode:   # [light|dark]
 img_cdn: 'https://raw.githubusercontent.com/cotes2020/chirpy-images/main'
 
 # the avatar on sidebar, support local or CORS resources
-avatar: '/commons/avatar.jpg'
+avatar: '/assets/image/midan_.png'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
