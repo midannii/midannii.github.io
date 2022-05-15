@@ -2,7 +2,7 @@
 layout: post
 title:  "[NLP paper] Text Classification Algorithms: A Survey + NLP 용어 정리 "
 date:   2021-02-06
-categories: NLP Papers
+categories: PaperReview
 ---
 
 

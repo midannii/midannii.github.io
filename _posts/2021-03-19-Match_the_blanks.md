@@ -2,7 +2,7 @@
 layout: post
 title:  "[NLP paper] Matching the Blanks: Distributional Similarity for Relation Learning "
 date:   2021-03-19
-categories: NLP Papers
+categories: PaperReview
 ---
 
 <br>

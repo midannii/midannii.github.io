@@ -2,7 +2,7 @@
 layout: post
 title:  "[NLP] Korean Pre-train Language Models "
 date:   2021-06-02
-categories: NLP Papers
+categories: PaperReview
 ---
 
 지난번 소개했던 [BERT]()에는 `multi-lingual model`이 존재하고 그 중 korean 도 있지만,
