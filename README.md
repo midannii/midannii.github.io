@@ -7,7 +7,7 @@ permalink: /about/
 
 ## Midan Shim
 
-![fig](statics/midan_.png){ width: 50px; }
+![fig](statics/midan_.png){ width: 20px; }
 
 Hi! I'm on my master's course at YonSei University.
 
