@@ -2,11 +2,7 @@
 layout: post
 title:  "[NLP] Blenderbot 2.0 ; Internet-Augmented Dialogue Generation "
 date:   2021-10-11
-desc: " "
-keywords: "DL, ML"
-categories: [Deeplearning]
-tags: [DL, ML]
-icon: icon-html
+categories: NLP Papers
 ---
 
 ## Abstract

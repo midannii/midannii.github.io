@@ -2,11 +2,7 @@
 layout: post
 title:  "[모두를 위한 딥러닝2 Pytorch] Tensor Manipulation "
 date:   2021-01-13
-desc: " "
-keywords: "DL, ML"
-categories: [Deeplearning]
-tags: [DL, ML, pytorch]
-icon: icon-html
+categories: ML
 ---
 
 19년 겨울 모두를 위한 딥러닝1을 공부했었는데, 이번에 `pytorch` 버전으로 2가 나왔길래 복습겸 공부 ! 👩‍💻👩‍💻

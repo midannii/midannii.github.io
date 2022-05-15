@@ -2,11 +2,7 @@
 layout: post
 title:  "[paper] Attention is All You Need "
 date:   2021-02-14
-desc: " "
-keywords: "DL, ML"
-categories: [Deeplearning]
-tags: [DL, ML, pytorch]
-icon: icon-html
+categories: NLP Papers
 ---
 
 

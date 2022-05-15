@@ -2,11 +2,7 @@
 layout: post
 title:  "[NLP] DROP : A reading comprehension Benchmark Requiring  Discrete Reasoning Over the content of Paragraphs  "
 date:   2021-11-16
-desc: " "
-keywords: "DL, ML"
-categories: [Deeplearning]
-tags: [DL, ML]
-icon: icon-html
+categories: NLP Papers
 ---
 
 ## *  요약

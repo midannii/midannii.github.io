@@ -2,11 +2,7 @@
 layout: post
 title:  "[NLP] Dependency Parser "
 date:   2021-03-23
-desc: " "
-keywords: "DL, ML"
-categories: [Python]
-tags: [DL, ML, pytorch]
-icon: icon-html
+categories: NLP
 ---
 
 

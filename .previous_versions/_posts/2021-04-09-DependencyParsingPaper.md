@@ -2,11 +2,7 @@
 layout: post
 title:  "[NLP paper] A Survey of Unsupervised Dependency Parsing "
 date:   2021-04-09
-desc: " "
-keywords: "DL, ML"
-categories: [Deeplearning]
-tags: [DL, ML, pytorch]
-icon: icon-html
+categories: NLP Papers
 ---
 
 <br>

@@ -2,11 +2,7 @@
 layout: post
 title:  "[NLP paper] Matching the Blanks: Distributional Similarity for Relation Learning "
 date:   2021-03-19
-desc: " "
-keywords: "DL, ML"
-categories: [Deeplearning]
-tags: [DL, ML, pytorch]
-icon: icon-html
+categories: NLP Papers
 ---
 
 <br>

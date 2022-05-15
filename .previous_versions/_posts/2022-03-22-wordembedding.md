@@ -2,11 +2,7 @@
 layout: post
 title:  "[NLP/강의내용정리] Word Embedding "
 date:   2022-03-22
-desc: " "
-keywords: "DL, ML"
-categories: [Deeplearning]
-tags: [DL, ML, NLP]
-icon: icon-html
+categories: NLP
 ---
 # 1. word embedding
 

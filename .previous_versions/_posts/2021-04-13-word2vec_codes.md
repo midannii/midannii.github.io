@@ -2,11 +2,7 @@
 layout: post
 title:  "[Stanford/CS224n 심화] word2vec 구현하기 "
 date:   2021-04-13
-desc: " "
-keywords: "DL, ML"
-categories: [Deeplearning]
-tags: [DL, ML, pytorch]
-icon: icon-html
+categories: NLP
 ---
 
 <br>

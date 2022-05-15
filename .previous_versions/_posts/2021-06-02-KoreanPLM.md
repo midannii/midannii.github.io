@@ -2,11 +2,7 @@
 layout: post
 title:  "[NLP] Korean Pre-train Language Models "
 date:   2021-06-02
-desc: " "
-keywords: "DL, ML"
-categories: [Deeplearning]
-tags: [DL, ML, pytorch]
-icon: icon-html
+categories: NLP Papers
 ---
 
 지난번 소개했던 [BERT]()에는 `multi-lingual model`이 존재하고 그 중 korean 도 있지만,
@@ -112,7 +108,7 @@ API 신청 등의 과정 필요한 KorBERT 의 단점을 보완하기 위해 만
 
 vocab size은 32200이고,
 
-각각 v1, v2, v3에 base, small model이 존재하는데, small model은 size가 412M 이다. 
+각각 v1, v2, v3에 base, small model이 존재하는데, small model은 size가 412M 이다.
 
 v1은 korean wiki, 나무위키, 뉴스(2.6B) 텍스트를 바탕으로 제작하였으며
 

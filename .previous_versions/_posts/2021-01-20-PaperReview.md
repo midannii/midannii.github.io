@@ -2,11 +2,7 @@
 layout: post
 title:  "[NLP paper] Natural Language Processing Reveals Vulnerable Mental Health Support Groups and Heightened Health Anxiety on Reddit During COVID-19: Observational Study "
 date:   2021-01-20
-desc: " "
-keywords: "DL, ML"
-categories: [Deeplearning]
-tags: [DL, ML, pytorch]
-icon: icon-html
+categories: NLP Papers
 ---
 
 
