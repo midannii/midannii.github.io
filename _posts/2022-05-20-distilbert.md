@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[paper] DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter "
-date:   2021-04-22
+date:   2021-05-20
 categories: PaperReview
 ---
 
