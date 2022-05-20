@@ -6,6 +6,9 @@ categories: PaperReview
 ---
 
 
+> 2022.05.01 : 새롭게 정리한 페이지 참고(https://mydann.notion.site/All-about-Transformer-f40c9a796cc741debd633c27a92cf78e)
+>
+
 
 이번에 정리해볼 [논문](https://arxiv.org/abs/1706.03762)은,
 
@@ -33,24 +36,47 @@ categories: PaperReview
 
 <br>
 
-## Introduction & Background
+## Introduction
 
-Recurrent model은 그 구조의 특성상 sequential하기 때문에 parallelization을 방해하는데,
+- language modeling이나 translation 등에서 RNN, LSTM, GRNN 등이 SOTA를 기록해왔으며, recurrent language model과 encoder-decoder model의 경계가 허물어지고 있음
 
-문제는 sequence length가 길어질수록 memory limit 때문에 parallelization이 중요하다.
+- recurrent model의 특징
+    - 주로 input&output sequence의 symbol position을 통해 factor computation을 진행함
+    - ..(RNN 특징이라 생략)
+    - 그러나 longer sequence에서 메모리 부족문제 등 여전히 한계점 존재함
+    - 구조의 특성상 sequential하기 때문에 parallelization을 방해
+      - but, sequence length가 길어질수록 memory limit 때문에 parallelization이 중요
 
-Attention mechanism은 여전히 남아있는 sequential computation의 제약을 극복하고자 하였다.
+- 우리는 Transformer 라는 model을 제안함
+    - recurrence를 피함 (recurrence model의 단점 가지지 않음)
+    - Attention mechanism 만을 사용함
 
-Attention mechanism을 통해 input sequence와 output sequence의 거리에 무관하게 sequence modeling과 transduction model이 가능하다.
+- Attention mechanism을 통해 input sequence와 output sequence의 거리에 무관하게 sequence modeling과 transduction model이 가능
+
+- input과 output의 거리에 상관없이 modeling 가능 == 즉 global dependecy를 끌어냄
 
 
-이 논문의 Transformer에서는 sequence-alignment나 RNN, CNN을 사용하지 않고, 입출력 representation을 계산하기 위해 `self-attention`만 사용한다.
 
+## Background
 
-self-attention은 sequence의 representation을 계산하기 위해, single sequence의 다른 위치와 관련된 attention mechanism 이다.
+- sequencial computation(즉 연산량)을 줄이기위한 노력 -Extened Neural GPU, ByteNet, ConvS2S 등등
+    - CNN을 basic building block(input&output position들의 hidden representation을 병렬적으로 계산)으로 사용
+    - input&output의 position으로부터 relate sigmal을 계산하기 위해 필요한 operation 개수가 증가하게 됨(COvS2에서는 선형적으로, ByteNet에서는 log적으로)
+- 반면 Transformer에서는
+    - 연산의 수가 상수로 줄었음
+    - attention-weighted position을 평균냄으로서 reduced effictive resolution을 얻었음
 
-이전까지는 텍스트 요약, 독해 등에서 쓰였다.
+        → 그 결과로 multi-head attention을 맞았음
 
+- self-attention(intra-attention)
+    - sequence의 representation을 얻기 위해 single sequence의 different position들을 연결짓는 attention mechanism임 (?)
+    - summarization, MRC 등 다양한 task에서 좋은 성능을 거둠
+- end-to-end memory network
+    - sequence-aligned recurrence가 아니라 recurrent attention mechanism를 기반함
+    - simple-language QA, LM에서 좋은 성능을 거두었음
+- Transformer
+    - input&output representation을 계산하기 위해 self-attention에만 의존
+    - sequence-aligned RNN or convolution사용하지 않음
 
 <br>
 
@@ -59,6 +85,17 @@ self-attention은 sequence의 representation을 계산하기 위해, single sequ
 
 
 ![fig](g reading comprehension, abstractive summarization, textual entailment and learning task-independent sentence representations)
+
+
+- encoder-decoder structure임
+    - encoder : $(x_1, ... , x_n)$ → $(z_1, ..., z_n)$
+        - $(z_1, ..., z_n)$는 continuous representation
+    - decoder : $(z_1, ... , z_n)$ → $(y_1, ..., y_n)$
+        - 각 단계는 auto-repressive
+            - 즉, 이전에 생성된 symbol을, 다음을 생성할 때 additional input으로 넣음
+
+    → transformer는 encoder-decoder architecture에 stacked self-attention과 fully connected layer를 사용함
+
 
 encoder는 input sequence의 representation(`x1, .. ,xn`)을 mapping 하고,
 
@@ -139,16 +176,6 @@ Residual Dropout 을 0.1로 이용하였고, 아래와 같은 성능을 도출�
 ![fig](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxcWZqOBoo-TB6y7Gqs-JVIK3EBuboAiXQWA&usqp=CAU)
 
 
-<br>
-
-
-이 링크 (https://wikidocs.net/31379)에서 알기 쉽게 설명해주셨길래, 참고해서 끄적끄적 정리해봤다!
-
-
-![fig](https://github.com/midannii/midannii.github.io/blob/master/static/assets/img/blog/papers/transformer.jpeg)
-
-
-![fig](https://github.com/midannii/midannii.github.io/blob/master/static/assets/img/blog/papers/transformer2.jpeg)
 
 
 ```
