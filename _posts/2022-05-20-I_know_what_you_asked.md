@@ -82,7 +82,7 @@ categories: PaperReview
     - the frame node’s specific meaning additionally annotated by the number like “-01” at the end of the word is different from the meaning in ConceptNet’s node even though it has identical letters.
 - graph 설명
 
-    ![graph](statics/assets/I_know_what_you_asked/graph.png)
+    ![graph](https://github.com/midannii/midannii.github.io/blob/master/statics/assets/I_know_what_you_asked/graph.png){:height="300px" width="500px"}
 
 
 ### 2.2. Language Encoder and Graph Path Learning Module
@@ -102,7 +102,7 @@ categories: PaperReview
 
 - ci, cj 는 다음과 같은 concept embedding임
 
-    ![ci_cj](statics/assets/I_know_what_you_asked/sij.png)
+    ![ci_cj](https://github.com/midannii/midannii.github.io/blob/master/statics/assets/I_know_what_you_asked/sij.png){:height="300px" width="500px"}
 
     AMR 그래프와 ConceptNet의 서로 다른 두 가지 개념 유형을 단일 그래프로 통합하기 때문에 모델은 해석 중에 질문과 관련성이 높은 경로를 전역적으로 인식
     언어 및 그래프 벡터를 얻은 후 모델은 두 벡터를 연결하고 이를 Softmax 계층에 공급하고 정답을 선택
@@ -131,15 +131,15 @@ categories: PaperReview
 - Comparison on different language models
 - Extensions of BERT
 
-    ![Table2](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4783lkwsX6dI3HaeJY93oeLkmsbG6LXFotg&usqp=CAU)
+    ![Table2](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4783lkwsX6dI3HaeJY93oeLkmsbG6LXFotg&usqp=CAU){:height="300px" width="500px"}
 
 - Comparison on different language models.
 
-    ![table4](statics/assets/I_know_what_you_asked/table4.png)
+    ![table4](https://github.com/midannii/midannii.github.io/blob/master/statics/assets/I_know_what_you_asked/table4.png){:height="300px" width="500px"}
 
 - Experiment on official test set
 
-    ![table5](statics/assets/I_know_what_you_asked/table5.png)
+    ![table5](https://github.com/midannii/midannii.github.io/blob/master/statics/assets/I_know_what_you_asked/table5.png){:height="300px" width="500px"}
 
 
 ## 4. Discussion
