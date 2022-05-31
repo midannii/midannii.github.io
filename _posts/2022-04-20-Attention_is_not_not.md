@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[paper] Attention is not not Explanation "
+title:  "[NLP/Attention/PLM] Attention is not not Explanation "
 date:   2022-04-20
 categories: PaperReview
 ---

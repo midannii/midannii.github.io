@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[NLP] Blenderbot 2.0 ; Beyond Goldfish Memory: Long-Term Open-Domain Conversation "
+title:  "[NLP/Dialogue] Blenderbot 2.0 ; Beyond Goldfish Memory: Long-Term Open-Domain Conversation "
 date:   2021-09-08
 categories: PaperReview
 ---

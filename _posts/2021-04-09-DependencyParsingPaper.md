@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[NLP paper] A Survey of Unsupervised Dependency Parsing "
+title:  "[Survey/NLP/DP] A Survey of Unsupervised Dependency Parsing "
 date:   2021-04-09
 categories: PaperReview
 ---

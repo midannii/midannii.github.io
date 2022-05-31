@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[paper] Deriving Machine Attention from Human Rationales "
+title:  "[NLP/Attention] Deriving Machine Attention from Human Rationales "
 date:   2022-03-20
 categories: PaperReview
 ---

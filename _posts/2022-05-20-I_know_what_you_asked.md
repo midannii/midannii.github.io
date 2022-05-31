@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[NLP] I Know What You Asked: Graph Path Learning using AMR for Commonsense Reasoning"
+title:  "[NLP/Graph/CommonsenseQA] I Know What You Asked: Graph Path Learning using AMR for Commonsense Reasoning"
 date:   2022-05-20
 categories: PaperReview
 ---

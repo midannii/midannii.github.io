@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[NLP] Blenderbot 2.0 ; Internet-Augmented Dialogue Generation "
+title:  "[NLP/Dialogue] Blenderbot 2.0 ; Internet-Augmented Dialogue Generation "
 date:   2021-10-11
 categories: PaperReview
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[paper] DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter "
+title:  "[NLP/PLM] DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter "
 date:   2022-04-30
 categories: PaperReview
 ---

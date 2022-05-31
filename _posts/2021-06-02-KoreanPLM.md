@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[NLP] Korean Pre-train Language Models "
+title:  "[NLP/PLM/Korea] Korean Pre-train Language Models "
 date:   2021-06-02
 categories: PaperReview
 ---

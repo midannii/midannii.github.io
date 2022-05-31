@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[paper] Attention is All You Need "
+title:  "[NLP/Attention] Attention is All You Need "
 date:   2021-02-14
 categories: PaperReview
 ---
